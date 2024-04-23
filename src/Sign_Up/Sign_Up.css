@@ -1,0 +1,53 @@
+.container {
+    background-color: rgba(127, 255, 212, 0.384);
+    width: 300px;
+    height: 450px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.sign_up_text {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        background-color: rgba(127, 255, 212, 0.384);
+        width: 300px;
+        height: 450px;
+        margin: auto;
+        margin-top: 300px;
+    }
+}
+
+.btn {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.btn_group {
+    text-align: center;
+}
+
+.btn_primary {
+    background-color: green;
+}
+
+.btn_danger {
+    background-color: red;
+}
+
+.field_for_text {
+    width: 250px;
+}
+.field_for_tex {
+    width: 260px;
+}
+#selected {
+    text-align: center;
+    margin: 0px 10px 10px 10px;
+}
+
