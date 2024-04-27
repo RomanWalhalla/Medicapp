@@ -1,0 +1,59 @@
+.container {
+    margin-top: 90px;
+    padding: 0px 80px 20px 80px;
+}
+
+.your_health {
+    padding-top: 10px;
+    text-shadow: black 0px 0px 1em;
+}
+
+.our_responsibility {
+    color: blueviolet;
+    text-shadow: black 0px 0px 1em;
+}
+
+.content_text {
+    text-align: center;
+    line-height: 20px;
+}
+
+.content_text p {
+    padding: 10px 15px 15px 15px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    font-style: oblique;
+    text-shadow: rgb(92, 82, 82) 1px 1px 1em, black 0px 0px 1em, rgb(255, 255, 255) 0px 0px 1em;
+}
+
+.btn_get_started {
+    background-color: blueviolet;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    align-content: center;
+}
+
+.btn_get_started:hover {
+    background-color: aquamarine;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        margin-top: 280px;
+        padding: 0px 15px 15px 20px;        
+    }
+
+    .content_text p {
+        padding-top: 15px;
+    }
+}  
+
+
+
+
+

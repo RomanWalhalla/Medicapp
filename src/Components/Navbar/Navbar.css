@@ -1,5 +1,5 @@
 body {
-    background-image: url("./Photos/Banner_médico.jpg");
+    background-image: url("../../img/Banner_médico.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -71,7 +71,7 @@ a:hover {
     color: rgb(54, 131, 101);
 }
 
-#foto {
+#logo {
     max-width: 25px;
     border-radius: 50%;
     bottom: 0%;
@@ -106,7 +106,7 @@ a:hover {
 
 @media (min-width: 280px) and (max-width: 430px) {
     body {
-        background-image: url("../Photos/Ejemplo320x1000.svg");
+        background-image: url("../../img//Ejemplo320x1000.svg");
         background-repeat: no-repeat;
         background-size: 100%;
         background-attachment: fixed;
@@ -115,7 +115,7 @@ a:hover {
 
 @media (min-width: 431px) and (max-width: 650px) {
     body {
-        background-image: url("../Photos/Ejemplo450x950.svg");
+        background-image: url("../../img//Ejemplo450x950.svg");
         background-repeat: no-repeat;
         background-size: 100%;
         background-attachment: fixed;
@@ -124,7 +124,7 @@ a:hover {
 
 @media (min-width: 651px) and (max-width: 768px) {
     body {
-        background-image: url("../Photos/Ejemplo850x1200.svg");
+        background-image: url("../../img//Ejemplo850x1200.svg");
         background-repeat: no-repeat;
         background-size: 100%;
         background-attachment: fixed;
