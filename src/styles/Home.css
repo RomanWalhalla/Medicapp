@@ -1,0 +1,36 @@
+.container_home {
+    background-color: rgba(0, 0, 0, 0.168);
+    width: 800px;
+    margin: 70px auto;
+    overflow-y: auto;
+    text-align: center;
+
+}
+
+.slider_home {
+    width: 800px;
+}
+
+.img {
+    /* background-color: blueviolet; */
+    width: 170px;
+    size: 100px;
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+
+}
+
+.img img {
+    width: 150px;
+
+}
+
+@media (max-width: 768px) {
+    .container_home {
+        width: 90%;
+        margin: 300px auto;
+        overflow-y: auto;
+        text-align: center;
+
+    }
+}

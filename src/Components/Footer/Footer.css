@@ -1,0 +1,44 @@
+/* Footer */
+
+.footer {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
+    color: rgb(194, 0, 228);
+    display: flex;
+}
+
+.Roman {
+    left: 0%;
+    margin-left: 15px;
+    width: 150px;
+}
+
+.All_right_reserved {
+    right: 0%;
+    margin-right: 15px;
+    width: 150px;
+}
+
+.Project_Capstone {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+    .footer {
+        font-size: 11px;
+    }
+    .All_right_reserved {
+        right: 0%;
+        margin-right: 10px;
+        width: 105px;
+    }
+    .Roman {
+        left: 0%;
+        margin-left: 10px;
+        width: 105px;
+    }
+}
