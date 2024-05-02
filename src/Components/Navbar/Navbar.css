@@ -1,12 +1,12 @@
-body {
+/* .landing_page {
+    background-color: chocolate;
     background-image: url("../../img/Banner_médico.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
-}
+} */
 
 header {
-    background-color: rgb(190, 94, 56);
     width: 100%;
     top: 0%;
     left: 0%;
@@ -101,33 +101,6 @@ a:hover {
     }
     .burger_button {
         display: none;
-    }
-}
-
-@media (min-width: 280px) and (max-width: 430px) {
-    body {
-        background-image: url("../../img//Ejemplo320x1000.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-attachment: fixed;
-    }
-}
-
-@media (min-width: 431px) and (max-width: 650px) {
-    body {
-        background-image: url("../../img//Ejemplo450x950.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-attachment: fixed;
-    }
-}
-
-@media (min-width: 651px) and (max-width: 768px) {
-    body {
-        background-image: url("../../img//Ejemplo850x1200.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-attachment: fixed;
     }
 }
 

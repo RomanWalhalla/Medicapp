@@ -1,15 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
 import Navbar from "./Components/Navbar/Navbar";
-import Landing_Page from "./Components/Landing_Page/Landing_Page";
-import Login from "./Components/Login/Login";
-import Sign_Up from "./Components/Sign_Up/Sign_Up";
+import Footer from "./Components/Footer/Footer";
+
+
+import LandingPage from "./Pages/LandingPage";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import Home from "./Pages/Home";
+import Appointments from "./Pages/Appointments";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      {/* <Landing_Page /> */}
-      {/* <Login /> */}
-      <Sign_Up />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Appointments" element={<Appointments />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }

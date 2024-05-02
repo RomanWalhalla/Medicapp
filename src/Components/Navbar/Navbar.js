@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import logo from "../../img/logo.png"
-// import "./Navbar_burger"
+
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -9,8 +10,9 @@ const Navbar = () => {
             <header>
                 <nav>
                     <div className="nav_logo">
-                        <a href="./LandingPage.html">
-                            StayHealthy <span><img src={logo} id="logo" alt="Logo" /></span></a>
+                        <NavLink to="/">
+                            StayHealthy <span><img src={logo} id="logo" alt="Logo" /></span>
+                        </NavLink>
                     </div>
                     <button type="button" className="burger_button">
                         <span></span><span></span>
@@ -18,26 +20,28 @@ const Navbar = () => {
                     </button>
                     <ul className="nav_links">
                         <li className="link">
-                            <a href="./Menu.html">Home</a>
+                            <NavLink to="/Home">
+                                Home
+                            </NavLink>
                         </li>
                         <li className="link">
-                            <a href="./Appointments.html">Appointments</a>
+                            <a href="./Appointments">Appointments</a>
                         </li>
                         <li className="link">
-                            <a href="./HealthBlog.html">Health Blog</a>
+                            <a href="./HealthBlog">Health Blog</a>
                         </li>
                         <li className="link">
-                            <a href="./Reviews.html">Reviews</a>
+                            <a href="./Reviews">Reviews</a>
                         </li>
                         <li className="link">
-                            <a href="./Sign_Up.html">
+                            <NavLink to="/SignUp">
                                 <button className="btn_signup_login">Sign Up</button>
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="link">
-                            <a href="./Login.html">
+                            <NavLink to="/Login">
                                 <button className="btn_signup_login">Login</button>
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
