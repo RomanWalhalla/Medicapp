@@ -1,7 +1,3 @@
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-
 import Search_doctors from "../img/clip-medical-consultation-online.gif"
 import Search_doctors_shield from "../img/sammy-shield-medical-protection.gif"
 
