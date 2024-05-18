@@ -8,29 +8,31 @@ import "../styles/Home.css"
 
 const Home = () => {
     return (
-        <div class="container_home">
-            <div class="slider_home">
-                <div class="img">
-                    <NavLink to="/Home"> <img src={Instant_Consultation} alt="Instant Consultation" />Instant
-                        Consultation
-                    </NavLink>
-                </div>
-                <div class="img">
-                    <NavLink to="/Appointments"> <img src={Book_of_Appointment} alt="Book of Appointment" />Book of
-                        Appointment
-                    </NavLink>
-                </div>
-                <div class="img">
-                    <NavLink to="/HealthBlog"> <img src={Self_Checkup} alt="Self Checkup" />Self Checkup
-                    </NavLink>
-                </div>
-                <div class="img">
-                    <NavLink to="/"> <img src={Help_Tips_and_Guidance} alt="Help Tips and Guidance" />Help Tips and
-                        Guidance
-                    </NavLink>
+        <>
+            <div className="container_home">
+                <div className="slider_home">
+                    <div className="image">
+                        <NavLink to="/Home"> <img src={Instant_Consultation} className="Instant_Consultation" alt="Instant Consultation" />Instant
+                            Consultation
+                        </NavLink>
+                    </div>
+                    <div className="image">
+                        <NavLink to="/Appointments"> <img src={Book_of_Appointment} className="Book_of_Appointment" alt="Book of Appointment" />Book of
+                            Appointment
+                        </NavLink>
+                    </div>
+                    <div className="image">
+                        <NavLink to="/HealthBlog"> <img src={Self_Checkup} className="Self_Checkup" alt="Self Checkup" />Self Checkup
+                        </NavLink>
+                    </div>
+                    <div className="image">
+                        <NavLink to="/"> <img src={Help_Tips_and_Guidance} className="Help_Tips_and_Guidance" alt="Help Tips and Guidance" />Help Tips and
+                            Guidance
+                        </NavLink>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
