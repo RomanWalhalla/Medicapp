@@ -1,15 +1,22 @@
 /* LandingPage */
 
-.landing_page {
+body {
     background-image: url("../img/Banner_médico.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
 }
 
+/* .container_landing_page {
+    background-image: url("../img/Banner_médico.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+} */
+
 .container_landing-page {
     margin-top: 90px;
-    padding: 0px 80px 20px 80px;
+    padding: 10px 80px 10px 80px;
 }
 
 .your_health {
@@ -28,8 +35,8 @@
 }
 
 .content_text_landing-page p {
-    width: 100%;
-    padding: 10px 15px 15px 15px;
+    width: auto;
+    padding: 15px 0px 10px 0px;
     text-align: justify;
     font-weight: bolder;
     font-size: x-large;
@@ -45,6 +52,7 @@
     font-size: 20px;
     font-weight: bold;
     align-content: center;
+    margin-bottom: 25px;
 }
 
 .btn_get_started:hover {
@@ -54,17 +62,20 @@
 @media (max-width: 768px) {
 
     .container_landing-page {
-        margin-top: 280px;
-        padding: 0px 15px 15px 20px;        
+        margin-top: 60px;
+        padding: 10px 25px 10px 25px;
+        /* background-color: aquamarine; */
     }
 
     .content_text_landing-page p {
         padding-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
-}  
+}
 
 @media (min-width: 280px) and (max-width: 430px) {
-    .landing_page {
+    body {
         background-image: url("../img/Ejemplo320x1000.svg");
         background-repeat: no-repeat;
         background-size: 100%;
@@ -73,7 +84,7 @@
 }
 
 @media (min-width: 431px) and (max-width: 650px) {
-    .landing_page {
+    body {
         background-image: url("../img/Ejemplo450x950.svg");
         background-repeat: no-repeat;
         background-size: 100%;
@@ -82,14 +93,10 @@
 }
 
 @media (min-width: 651px) and (max-width: 768px) {
-    .landing_page {
+    body {
         background-image: url("../img/Ejemplo850x1200.svg");
         background-repeat: no-repeat;
         background-size: 100%;
         background-attachment: fixed;
     }
 }
-
-
-
-

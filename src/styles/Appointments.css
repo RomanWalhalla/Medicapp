@@ -1,16 +1,12 @@
+/* Appointments */
+
 .container_appointments {
     margin: 70px auto;
-    /* margin-left: auto;
-    margin-right: auto; */
     text-align: center;
     display: flex;
     justify-content: center;
     height: 100%;
     width: 100%;
-}
-
-.content_appointments {
-    /* justify-content: center; */
 }
 
 .search_doctors-img {
@@ -25,15 +21,17 @@
     position: absolute;
     right: 20px;
     top: 90px;
+    z-index: -1;
 }
 
 @media (max-width: 768px) {
 
     .container_appointments {
-        margin-top: 280px;
-        padding: 0px 15px 15px 20px;        
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto;
     }
-}  
+}
 
 .form_search {
     background-color: rgb(196, 255, 242);
@@ -57,12 +55,12 @@
     outline: none;
 }
 
-.search_button{
+.search_button {
     background-color: rgb(255, 0, 230);
     cursor: pointer;
     border: none;
-    height: 30px;
+    height: 29px;
     width: 30px;
-    border-radius: 50%;   
+    border-radius: 50%;
     margin-right: -9px;
 }

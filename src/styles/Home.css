@@ -1,36 +1,38 @@
-.container_home {
-    background-color: rgba(0, 0, 0, 0.168);
-    width: 800px;
-    margin: 70px auto;
-    overflow-y: auto;
-    text-align: center;
-
-}
+/* Home */
 
 .slider_home {
-    width: 800px;
+    width: 900px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.img {
-    /* background-color: blueviolet; */
-    width: 170px;
-    size: 100px;
+.image {
     display: inline-block;
-    margin: 10px 10px 10px 10px;
-
+    margin: 10px 25px 10px 25px;
+    text-align: center;
 }
 
-.img img {
-    width: 150px;
-
+.Instant_Consultation,
+.Book_of_Appointment,
+.Self_Checkup,
+.Help_Tips_and_Guidance {
+    width: 170px;
+    height: fit-content;
+    display: block;
 }
 
 @media (max-width: 768px) {
     .container_home {
         width: 90%;
-        margin: 300px auto;
-        overflow-y: auto;
-        text-align: center;
-
+        margin: 100px auto;
+        overflow: auto;
     }
+
+    .slider_home {
+        overflow-y: auto;
+        margin: auto;
+        overflow: auto;
+    }
+
 }

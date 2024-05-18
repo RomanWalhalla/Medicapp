@@ -1,8 +1,51 @@
 import { NavLink } from "react-router-dom";
 
+// import { API_URL } from '../config';
+
 import "../styles/Login.css"
 
 const Login = () => {
+
+    // const [password, setPassword] = useState("");
+    // const [email, setEmail] = useState('');
+    
+    // const navigate = useNavigate();
+    // useEffect(() => {
+    //     if (sessionStorage.getItem("auth-token")) {
+    //         navigate("/")
+    //     }
+    // }, []);
+    // const login = async (e) => {
+    //     e.preventDefault();
+    //     const res = await fetch(`${API_URL}/api/auth/login`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             // name: name,
+    //             email: email,
+    //             password: password,
+    //         }),
+    //     });
+    //     const json = await res.json();
+    //     if (json.authtoken) {
+    //         sessionStorage.setItem('auth-token', json.authtoken);
+
+    //         sessionStorage.setItem('email', email);
+    //         navigate('/');
+    //         window.location.reload()
+    //     } else {
+    //         if (json.errors) {
+    //             for (const error of json.errors) {
+    //                 alert(error.msg);
+    //             }
+    //         } else {
+    //             alert(json.error);
+    //         }
+    //     }
+    // };
+
     return (
         <>
             <div className="container_login">
@@ -16,17 +59,23 @@ const Login = () => {
                         Are you a new member? <span><NavLink to="/SignUp">Sign Up Here</NavLink></span>
                     </div>
                     <div className="login_form">
-                        <form action="">
+                        <form
+                        //  onSubmit={login} 
+                         action="">
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Email</legend>
-                                    <input type="email" className="field_for_text" required class="form-control" placeholder="Enter your email" />
+                                    <input type="email" name="email" id="email" 
+                                    // value={email} onChange={ (e) => setEmail(e.target.value) } 
+                                    className="field_for_text" required class="form-control" placeholder="Enter your email" aria-describedby="helpId" />
                                 </fieldset>
                             </div>
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Password</legend>
-                                    <input type="text" className="field_for_text" required class="form-control" placeholder="Enter your password" />
+                                    <input type="password" name="password" id="password"
+                                    //  value={password} onChange={ (e) => setPassword(e.target.value) } 
+                                     className="field_for_text" required class="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                                 </fieldset>
                             </div>
                             <div className="btn_group">
@@ -38,7 +87,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
