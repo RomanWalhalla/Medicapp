@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { API_URL } from '../config';
-import { useNavigate } from 'react-router-dom'
-
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import "../styles/SignUp.css"
 
@@ -63,7 +61,7 @@ const SignUp = () => {
                     </div>
                     <div className="sign_up-form">
                         <form method='POST' action="" onSubmit={register}>
-                            <div className="form-group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Role</legend>
                                     <select id="mySelect" onchange="myFunction()">
@@ -73,34 +71,59 @@ const SignUp = () => {
                                     </select>
                                 </fieldset>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Name</legend>
-                                    <input type="text" name='name' id='name' value={name} onChange={(e) => setName(e.target.value) } className="field_for_text" required class="form-control" placeholder="Enter your name" aria-describedby='helpId' />
+                                    <input type="text" name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} /* className="field_for_text" */ required class="form-control_signup" placeholder="Enter your name" aria-describedby='helpId' />
                                 </fieldset>
                             </div>
-                            <div className="form_group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Phone</legend>
-                                    <input type="tel" name='phone' id='phone' value={phone} onChange={(e) => setPhone(e.target.value) } className="field_for_text" required class="form-control" placeholder="Enter your phone" aria-describedby='helpId' />
+                                    <input type="tel"
+                                        name='phone'
+                                        id='phone'
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)} /* className="field_for_text" */
+                                        required class="form-control_signup"
+                                        placeholder="Enter your phone"
+                                        aria-describedby='helpId' />
                                 </fieldset>
                             </div>
-                            <div className="form_group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Email</legend>
-                                    <input type="email" name='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} className="field_for_text" required class="form-control" placeholder="Enter your email" aria-describedby='helpId'/>
-                                    {showerr && <div className='err' style={{ color: 'red'}}>{showerr}</div>}
+                                    <input
+                                        type="email"
+                                        name='email'
+                                        id='email'
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required 
+                                        className="form-control_signup"
+                                        placeholder="Enter your email"
+                                        aria-describedby='helpId' />
+                                    {showerr && <div className='err' style={{ color: 'red' }}>{showerr}</div>}
                                 </fieldset>
                             </div>
-                            <div className="form_group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Password</legend>
-                                    <input type="password" name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value) } className="field_for_text" required class="form-control" placeholder="Enter your password" aria-describedby='helpId' />
+                                    <input
+                                        type="password"
+                                        name='password'
+                                        id='password'
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                        className="form-control_signup"
+                                        placeholder="Enter your password"
+                                        aria-describedby='helpId' />
                                 </fieldset>
                             </div>
-                            <div className="btn_group">
-                                <button type="submit" className="btn btn_primary">Submit</button>
-                                <button type="reset" className="btn btn_danger">Reset</button>
+                            <div className="btn_group_signup">
+                                <button type="submit" className="btn_signup btn_primary">Submit</button>
+                                <button type="reset" className="btn_signup btn_danger">Reset</button>
                             </div>
                         </form>
                     </div>

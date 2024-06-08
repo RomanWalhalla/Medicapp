@@ -8,7 +8,7 @@ const Login = () => {
 
     // const [password, setPassword] = useState("");
     // const [email, setEmail] = useState('');
-    
+
     // const navigate = useNavigate();
     // useEffect(() => {
     //     if (sessionStorage.getItem("auth-token")) {
@@ -60,22 +60,22 @@ const Login = () => {
                     </div>
                     <div className="login_form">
                         <form
-                        //  onSubmit={login} 
-                         action="">
+                            //  onSubmit={login} 
+                            action="">
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Email</legend>
-                                    <input type="email" name="email" id="email" 
-                                    // value={email} onChange={ (e) => setEmail(e.target.value) } 
-                                    className="field_for_text" required class="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                                    <input type="email" name="email" id="email"
+                                        // value={email} onChange={ (e) => setEmail(e.target.value) } 
+                                        required class="form-control_login" placeholder="Enter your email" aria-describedby="helpId" />
                                 </fieldset>
                             </div>
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Password</legend>
                                     <input type="password" name="password" id="password"
-                                    //  value={password} onChange={ (e) => setPassword(e.target.value) } 
-                                     className="field_for_text" required class="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                                        //  value={password} onChange={ (e) => setPassword(e.target.value) } 
+                                        required class="form-control_login" placeholder="Enter your password" aria-describedby="helpId" />
                                 </fieldset>
                             </div>
                             <div className="btn_group">

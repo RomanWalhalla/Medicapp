@@ -14,13 +14,34 @@
     text-align: center;
 }
 
-.btn {
+.sign_up-form {
+    margin-top: 10px;
+}
+
+.form-control_signup {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    width: 230px;
+}
+
+#mySelect {
+    margin-left: 10px;
+    width: fit-content;
+}
+
+.selected {
+    text-align: center;
+    margin: 0px 10px 10px 10px;
+}
+
+.btn_signup {
     border-radius: 5px;
     margin: 10px;
     padding: 5px 20px 5px 20px;
 }
 
-.btn_group {
+.btn_group_signup {
     text-align: center;
 }
 
@@ -30,17 +51,6 @@
 
 .btn_danger {
     background-color: red;
-}
-
-.field_for_text {
-    width: 250px;
-}
-.field_for_tex {
-    width: 260px;
-}
-.selected {
-    text-align: center;
-    margin: 0px 10px 10px 10px;
 }
 
 @media (max-width: 768px) {
