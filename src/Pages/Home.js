@@ -12,7 +12,7 @@ const Home = () => {
             <div className="container_home">
                 <div className="slider_home">
                     <div className="image">
-                        <NavLink to="/Home"> <img src={Instant_Consultation} className="Instant_Consultation" alt="Instant Consultation" />Instant
+                        <NavLink to="/InstantConsultation"> <img src={Instant_Consultation} className="Instant_Consultation" alt="Instant Consultation" />Instant
                             Consultation
                         </NavLink>
                     </div>
