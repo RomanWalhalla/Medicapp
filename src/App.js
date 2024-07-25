@@ -9,6 +9,7 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import Home from "./Pages/Home";
 import Appointments from "./Pages/Appointments";
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Appointments" element={<Appointments />} />
+          <Route path="/InstantConsultation" element={<InstantConsultation />} />
         </Routes>
         <Footer />
       </Router>

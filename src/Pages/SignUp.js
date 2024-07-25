@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { API_URL } from '../config';
-import { useNavigate } from 'react-router-dom'
-
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import "../styles/SignUp.css"
 
@@ -68,7 +66,7 @@ const SignUp = () => {
                     </div>
                     <div className="sign_up-form">
                         <form method='POST' action="" onSubmit={register}>
-                            <div className="form-group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Role</legend>
                                     <select id="mySelect" value={role} onChange={(e) => setRole(e.target.value)} required>
@@ -78,7 +76,7 @@ const SignUp = () => {
                                     </select>
                                 </fieldset>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Name</legend>
                                     <input
@@ -92,7 +90,7 @@ const SignUp = () => {
                                         aria-describedby='helpId' />
                                 </fieldset>
                             </div>
-                            <div className="form_group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Phone</legend>
                                     <input
@@ -103,11 +101,9 @@ const SignUp = () => {
                                         onChange={onChange}
                                         className="field_for_text"
                                         required
-                                        placeholder="Enter your phone"
-                                        aria-describedby='helpId' />
                                 </fieldset>
                             </div>
-                            <div className="form_group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Email</legend>
                                     <input
@@ -123,7 +119,7 @@ const SignUp = () => {
                                     {showerr && <div className='err' style={{ color: 'red' }}>{showerr}</div>}
                                 </fieldset>
                             </div>
-                            <div className="form_group">
+                            <div className="form-group_signup">
                                 <fieldset>
                                     <legend>Password</legend>
                                     <input
@@ -138,9 +134,9 @@ const SignUp = () => {
                                         aria-describedby='helpId' />
                                 </fieldset>
                             </div>
-                            <div className="btn_group">
-                                <button type="submit" className="btn btn_primary">Submit</button>
-                                <button type="reset" className="btn btn_danger">Reset</button>
+                            <div className="btn_group_signup">
+                                <button type="submit" className="btn_signup btn_primary">Submit</button>
+                                <button type="reset" className="btn_signup btn_danger">Reset</button>
                             </div>
                         </form>
                     </div>
