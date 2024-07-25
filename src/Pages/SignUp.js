@@ -61,7 +61,7 @@ const SignUp = () => {
                     <div className="sign_up_text">
                         <h1 className="h1_register">Sign Up</h1>
                     </div>
-                    <div className="selected_div">{role ? ( <>You register as <span className="role_register" > {role} </span></>) : ''}
+                    <div className="selected_div">{role ? (<>You register as <span className="role_register" > {role} </span></>) : ''}
                     </div>
                     <div className="sign_up_text">
                         Already member? <span><NavLink to="/Login">Login</NavLink></span>
@@ -71,7 +71,7 @@ const SignUp = () => {
                             <div className="form-group">
                                 <fieldset>
                                     <legend>Role</legend>
-                                    <select id="mySelect" value={role} onChange={ (e)=> setRole(e.target.value) } required>
+                                    <select id="mySelect" value={role} onChange={(e) => setRole(e.target.value)} required>
                                         <option value='' disabled>------</option>
                                         <option value="Doctor">Doctor</option>
                                         <option value="Patient">Patient</option>
@@ -81,26 +81,61 @@ const SignUp = () => {
                             <div className="form-group">
                                 <fieldset>
                                     <legend>Name</legend>
-                                    <input type="text" name='name' id='name' value={name} onChange={ onChange } className="field_for_text" required placeholder="Enter your name" aria-describedby='helpId' />
+                                    <input
+                                        type="text"
+                                        name='name'
+                                        id='name'
+                                        value={name}
+                                        onChange={onChange}
+                                        className="field_for_text"
+                                        required placeholder="Enter your name"
+                                        aria-describedby='helpId' />
                                 </fieldset>
                             </div>
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Phone</legend>
-                                    <input type="tel" name='phone' id='phone' value={phone} onChange={ onChange } className="field_for_text" required placeholder="Enter your phone" aria-describedby='helpId' />
+                                    <input
+                                        type="tel"
+                                        name='phone'
+                                        id='phone'
+                                        value={phone}
+                                        onChange={onChange}
+                                        className="field_for_text"
+                                        required
+                                        placeholder="Enter your phone"
+                                        aria-describedby='helpId' />
                                 </fieldset>
                             </div>
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Email</legend>
-                                    <input type="email" name='email' id='email' value={email} onChange={ onChange } className="field_for_text" required placeholder="Enter your email" aria-describedby='helpId'/>
-                                    {showerr && <div className='err' style={{ color: 'red'}}>{showerr}</div>}
+                                    <input
+                                        type="email"
+                                        name='email'
+                                        id='email'
+                                        value={email}
+                                        onChange={onChange}
+                                        className="field_for_text"
+                                        required
+                                        placeholder="Enter your email"
+                                        aria-describedby='helpId' />
+                                    {showerr && <div className='err' style={{ color: 'red' }}>{showerr}</div>}
                                 </fieldset>
                             </div>
                             <div className="form_group">
                                 <fieldset>
                                     <legend>Password</legend>
-                                    <input type="password" name='password' id='password' value={password} onChange={ onChange } className="field_for_text" required  placeholder="Enter your password" aria-describedby='helpId' />
+                                    <input
+                                        type="password"
+                                        name='password'
+                                        id='password'
+                                        value={password}
+                                        onChange={onChange}
+                                        className="field_for_text"
+                                        required
+                                        placeholder="Enter your password"
+                                        aria-describedby='helpId' />
                                 </fieldset>
                             </div>
                             <div className="btn_group">
