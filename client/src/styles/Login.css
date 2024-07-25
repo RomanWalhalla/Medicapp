@@ -1,0 +1,62 @@
+/* Login */
+
+/* .login_signup {
+    background-color: blue;
+} */
+
+/* .landing_page {
+    background-color: aquamarine;
+} */
+
+.container_login {
+    background-color: rgba(127, 255, 212, 0.384);
+    width: 300px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+}
+
+.login_text {
+    text-align: center;
+}
+
+.login_form {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .container_login {
+        background-color: rgba(127, 255, 212, 0.384);
+        width: 300px;
+        height: 250px;
+        margin: 70px auto;
+        /* margin-top: 300px; */
+    }
+}
+
+.btn {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.btn_group {
+    text-align: center;
+}
+
+.btn_primary {
+    background-color: green;
+}
+
+.btn_danger {
+    background-color: red;
+}
+
+.form-control_login {
+    width: 230px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
