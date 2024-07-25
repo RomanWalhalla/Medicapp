@@ -1,0 +1,26 @@
+{
+  "name": "medical_apps",
+  "version": "1.0.0",
+  "description": "This is application Medical Appointment Booking for searching doctors and booking consultation",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "cd server && npm start",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanWalhalla/Medical_apps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanWalhalla/Medical_apps/issues"
+  },
+  "homepage": "https://github.com/RomanWalhalla/Medical_apps#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
