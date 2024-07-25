@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is application Medical Appointment Booking for searching doctors and booking consultation",
   "main": "index.js",
+  "dependencies": {
+    "react-scripts": "5.0.1"
+  },
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd server && npm start",
