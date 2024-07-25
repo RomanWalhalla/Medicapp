@@ -1,33 +1,35 @@
+// import express from 'express';
+// import path from 'path';
+
 const express = require('express');
-const cors = require('cors');
-const http = require('http');
-const connectToMongo = require('./db');
+const mongoose = require('mongoose');
+const authRoutes = require('./routes/auth');
+require('dotenv').config();
+
+const path = require('path');
+
 const app = express();
+const PORT = process.env.PORT || 5000;
 
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log('MongoDB connected'))
+.catch((err) => console.error(err));
 
-app.set('view engine','ejs')
-app.use(express.static('public'))
-
-const PORT = process.env.PORT || 8181;
-
-
-// Middleware
 app.use(express.json());
-app.use(cors());
 
-// Connect to MongoDB
-connectToMongo();
+app.use('/api/auth', authRoutes);
 
-// Routes
-app.use('/api/auth', require('./routes/auth'));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// app.get('/api/hello', (req, res) => {
+//     res.send({ message: 'Hello from the server!'});
+// });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
-
-
-  // Start the server
 app.listen(PORT, () => {
-console.log(`Server is running on port http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
