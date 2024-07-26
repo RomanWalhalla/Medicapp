@@ -20,6 +20,10 @@
     "type": "git",
     "url": "git+https://github.com/RomanWalhalla/Medical_apps.git"
   },
+  "engines": {
+    "node": "18.13.0",
+    "npm": "9.2.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
