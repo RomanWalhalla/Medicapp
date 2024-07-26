@@ -101,6 +101,8 @@ const SignUp = () => {
                                         onChange={onChange}
                                         className="field_for_text"
                                         required
+                                        placeholder="Enter your phone"
+                                        aria-describedby='helpId'
                                     />
                                 </fieldset>
                             </div>

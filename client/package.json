@@ -17,6 +17,9 @@
     "reactjs-popup": "^2.0.6",
     "web-vitals": "^2.1.4"
   },
+  "engines": {
+    "node": "18.13.0"
+  },
   "scripts": {
     "build": "react-scripts build",
     "start": "react-scripts start",
