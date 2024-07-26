@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.34603ad5.css",
-    "main.js": "/static/js/main.f05fe94b.js",
+    "main.css": "/static/css/main.36ba5709.css",
+    "main.js": "/static/js/main.2fb7fe07.js",
     "static/media/kit-risk-management-forecasting-and-assessment.gif": "/static/media/kit-risk-management-forecasting-and-assessment.291e9d90813afbe074b5.gif",
     "static/media/vivid-female-blogger-streaming-from-her-flat.gif": "/static/media/vivid-female-blogger-streaming-from-her-flat.c21bfe555ab667afa305.gif",
     "static/media/kit-health-technology-and-digital-health-solutions.gif": "/static/media/kit-health-technology-and-digital-health-solutions.722bf5bd1fb72a86b32e.gif",
@@ -13,11 +13,11 @@
     "static/media/Banner_médico.jpg": "/static/media/Banner_médico.bf850045213ca3371662.jpg",
     "static/media/Ejemplo850x1200.svg": "/static/media/Ejemplo850x1200.94a7f0aa298b2cb073be.svg",
     "index.html": "/index.html",
-    "main.34603ad5.css.map": "/static/css/main.34603ad5.css.map",
-    "main.f05fe94b.js.map": "/static/js/main.f05fe94b.js.map"
+    "main.36ba5709.css.map": "/static/css/main.36ba5709.css.map",
+    "main.2fb7fe07.js.map": "/static/js/main.2fb7fe07.js.map"
   },
   "entrypoints": [
-    "static/css/main.34603ad5.css",
-    "static/js/main.f05fe94b.js"
+    "static/css/main.36ba5709.css",
+    "static/js/main.2fb7fe07.js"
   ]
 }
