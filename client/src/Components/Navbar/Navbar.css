@@ -2,11 +2,10 @@ header {
     width: 100%;
     top: 0%;
     left: 0%;
-    
 }
 
 nav {
-    background-color: rgba(133, 133, 127, 0.245);
+    background-color: rgba(133, 133, 127, 0.709);
     display: flex;
     position: fixed;
     align-items: center;
@@ -17,9 +16,10 @@ nav {
     height: 60px;
 }
 
-a {
+.link a {
     text-decoration: none;
-    color: rgb(194, 0, 228);
+    color: rgb(145, 4, 170);
+    font-size: medium;
 }
 
 a:hover {
@@ -39,6 +39,7 @@ a:hover {
 }
 
 .nav_logo a {
+    text-decoration: none;
     color: aqua;
     height: 50px;
 }
@@ -50,6 +51,15 @@ a:hover {
     gap: 15px;
     padding-right: 20px;
 }
+
+#logo {
+    max-width: 25px;
+    border-radius: 50%;
+    bottom: 0%;
+    padding-top: 10px;
+}
+
+/* Button ___________________________________________ */
 
 .btn_signup_login {
     border: 2px solid blue;
@@ -63,12 +73,21 @@ a:hover {
     color: rgb(54, 131, 101);
 }
 
-#logo {
-    max-width: 25px;
-    border-radius: 50%;
-    bottom: 0%;
-    padding-top: 10px;
+.btn_logout {
+    border: 2px solid rgb(13, 16, 216);
+    border-radius: 6px;
+    color: rgb(31, 24, 15);
+    background-color: blueviolet;
 }
+
+.btn_logout:hover {
+    background-color: aqua;
+    color: rgb(54, 131, 101);
+}
+
+/* ________________________________________________________________ */
+
+
 
 .menu {
     background-color: rgba(50, 50, 50, 0.911);
@@ -84,6 +103,15 @@ a:hover {
 .hidden {
     display: none;
 }
+
+.logout_text {
+    color: deeppink;
+}
+
+.logout_name {
+    color: chartreuse;
+}
+
 
 @media (min-width: 769px) {
     /* .burger_logo {
@@ -133,7 +161,11 @@ a:hover {
     .burger_button span:nth-child(2) {
         top: 19px;
     }
-
+    .btn_logout:hover {
+        background-color: aqua;
+        color: rgb(54, 131, 101);
+        /* font-size: small; */
+    }
     /* .burger_links.active { 
         background-color: rgba(114, 60, 114, 0.342);
         width: 100px;

@@ -1,16 +1,14 @@
 import "./Navbar.css";
 import logo from "../../img/logo.png"
-
 import { NavLink } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../../context/Context";
 
 const Navbar = () => {
-
-    // Burger menu
+    // Burger menu //
     const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
     const [burger_menu, setBurgerMenu] = useState("menu hidden")
     const [isMenuClicked, setIsMenuClicked] = useState(false)
-
     const updateMenu = () => {
         if (!isMenuClicked) {
             setBurgerClass("burger-bar clicked")
@@ -22,49 +20,9 @@ const Navbar = () => {
         }
         setIsMenuClicked(!isMenuClicked)
     }
+    // -------------------------------------------------------------------------------
 
-    // Logged
-
-    // const [click, setClick] = useState(false);
-
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const [username, setUsername] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [showDropdown, setShowDropdown] = useState(false);
-    // const handleClick = () => setClick(!click);
-
-
-    // const handleLogout = () => {
-    //     sessionStorage.removeItem("auth-token");
-    //     sessionStorage.removeItem("name");
-    //     sessionStorage.removeItem("email");
-    //     sessionStorage.removeItem("phone");
-    //     // remove email phone
-    //     localStorage.removeItem("doctorData");
-    //     setIsLoggedIn(false);
-    //     // setUsername("");
-
-    //     // Remove the reviewFormData from local storage
-    //     for (let i = 0; i < localStorage.length; i++) {
-    //         const key = localStorage.key(i);
-    //         if (key.startsWith("reviewFormData_")) {
-    //             localStorage.removeItem(key);
-    //         }
-    //     }
-    //     setEmail('');
-    //     window.location.reload();
-    // }
-    // const handleDropdown = () => {
-    //     setShowDropdown(!showDropdown);
-    // }
-    // useEffect(() => {
-    //     const storedemail = sessionStorage.getItem("email");
-
-    //     if (storedemail) {
-    //         setIsLoggedIn(true);
-    //         setUsername(storedemail);
-    //     }
-    // }, []);
+    const { logout, isLoggedIn, userName } = useContext(Context)
 
     return (
         <>
@@ -81,40 +39,53 @@ const Navbar = () => {
                         <span className={burger_class}></span>
                     </button>
                     <div className="nav_links">
-                         {/* onClick={handleClick}> */}
+                        {/* onClick={handleClick}> */}
                         <div className="link">
-                        <NavLink to="/Home">
-                            Home
-                        </NavLink>
+                            <NavLink to="/Home">
+                                Home
+                            </NavLink>
+                        </div>
+                        <div className="link">
+                            <NavLink to="/Appointments">
+                                Appointments
+                            </NavLink>
+                        </div>
+                        <div className="link">
+                            <NavLink to="/HealthBlog">
+                                Health Blog
+                            </NavLink>
+                        </div>
+                        <div className="link">
+                            <NavLink to="/Reviews">
+                                Reviews
+                            </NavLink>
+                        </div>
+                        {isLoggedIn ? (
+                            <>
+                                <div>
+                                    <span className="logout_text">Welcome, <span className="logout_name">{userName}</span> </span>
+                                    <button className="btn_logout" onClick={logout}>
+                                        Logout
+                                    </button>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div className="link">
+                                    <NavLink to="/Register">
+                                        <button className="btn_signup_login">Sign Up</button>
+                                    </NavLink>
+                                </div>
+                                <div className="link">
+                                    <NavLink to="/Login">
+                                        <button className="btn_signup_login">Login</button>
+                                    </NavLink>
+                                </div>
+                            </>
+                        )}
                     </div>
-                    <div className="link">
-                        <NavLink to="/Appointments">
-                            Appointments
-                        </NavLink>
-                    </div>
-                    <div className="link">
-                        <NavLink to="/Health Blog">
-                            Health Blog
-                        </NavLink>
-                    </div>
-                    <div className="link">
-                        <NavLink to="/Reviews">
-                            Reviews
-                        </NavLink>
-                    </div>
-                    <div className="link">
-                        <NavLink to="/SignUp">
-                            <button className="btn_signup_login">Sign Up</button>
-                        </NavLink>
-                    </div>
-                    <div className="link">
-                        <NavLink to="/Login">
-                            <button className="btn_signup_login">Login</button>
-                        </NavLink>
-                    </div>
-                </div>
-            </nav>
-        </header >
+                </nav>
+            </header >
             <div className={burger_menu}>
                 <div className="link">
                     <NavLink to="/">
@@ -127,7 +98,7 @@ const Navbar = () => {
                     </NavLink>
                 </div>
                 <div className="link">
-                    <NavLink to="/Health Blog">
+                    <NavLink to="/HealthBlog">
                         Health Blog
                     </NavLink>
                 </div>
@@ -136,17 +107,19 @@ const Navbar = () => {
                         Reviews
                     </NavLink>
                 </div>
-                {/* {isLoggedIn ? (
+                {isLoggedIn ? (
                     <>
                         <div>
-                            <button className="btn_logout" onClick={handleLogout}>
+                            <span>Welcome, {userName} </span>
+                            <button className="btn_logout" onClick={logout}>
                                 Logout
                             </button>
                         </div>
                     </>
-                ) : ( */}
+                ) : (
+                    <>
                         <div className="link">
-                            <NavLink to="/SignUp">
+                            <NavLink to="/Register">
                                 <button className="btn_signup_login">Sign Up</button>
                             </NavLink>
                         </div>
@@ -155,10 +128,54 @@ const Navbar = () => {
                                 <button className="btn_signup_login">Login</button>
                             </NavLink>
                         </div>
-                {/* )} */}
+                    </>
+                )}
             </div >
         </>
     );
 }
 
 export default Navbar;
+
+// Logged
+
+// const [click, setClick] = useState(false);
+
+// const [isLoggedIn, setIsLoggedIn] = useState(false);
+// const [username, setUsername] = useState("");
+// const [email, setEmail] = useState("");
+// const [showDropdown, setShowDropdown] = useState(false);
+// const handleClick = () => setClick(!click);
+
+
+// const handleLogout = () => {
+//     sessionStorage.removeItem("auth-token");
+//     sessionStorage.removeItem("name");
+//     sessionStorage.removeItem("email");
+//     sessionStorage.removeItem("phone");
+//     // remove email phone
+//     localStorage.removeItem("doctorData");
+//     setIsLoggedIn(false);
+//     // setUsername("");
+
+//     // Remove the reviewFormData from local storage
+//     for (let i = 0; i < localStorage.length; i++) {
+//         const key = localStorage.key(i);
+//         if (key.startsWith("reviewFormData_")) {
+//             localStorage.removeItem(key);
+//         }
+//     }
+//     setEmail('');
+//     window.location.reload();
+// }
+// const handleDropdown = () => {
+//     setShowDropdown(!showDropdown);
+// }
+// useEffect(() => {
+//     const storedemail = sessionStorage.getItem("email");
+
+//     if (storedemail) {
+//         setIsLoggedIn(true);
+//         setUsername(storedemail);
+//     }
+// }, []);
