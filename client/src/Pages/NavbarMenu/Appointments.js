@@ -1,8 +1,9 @@
-import Search_doctors from "../img/clip-medical-consultation-online.gif"
-import Search_doctors_shield from "../img/sammy-shield-medical-protection.gif"
+import Search_doctors from "../../img/clip-medical-consultation-online.gif"
+import Search_doctors_shield from "../../img/sammy-shield-medical-protection.gif"
+// import Search_doctors_shield from "../../img/sammy-shield-medical-protection.gif"
 
-import "../styles/Appointments.css"
-import SearchButton from "../Components/Search_button/Search_button"
+import "../../styles/Appointments.css"
+import SearchButton from "../../Components/Search_button/Search_button"
 
 // import "font-awesome/css/font-awesome.min.css"
 
