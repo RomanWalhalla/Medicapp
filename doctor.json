@@ -1,0 +1,373 @@
+[
+    {
+        "role": "doctor",
+        "firstName": "Anallise",
+        "lastName": "Cooch",
+        "phoneNumber": "818-497-8865",
+        "email": "acooch0@hc360.com",
+        "password": 123456,
+        "age": 86,
+        "address": {
+            "country": "China",
+            "city": "Amu Gulang Baolige",
+            "streetName": "Acker"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Dev",
+        "lastName": "St. Queintain",
+        "phoneNumber": "310-598-4583",
+        "email": "dstqueintain1@opera.com",
+        "password": 123456,
+        "age": 65,
+        "address": {
+            "country": "Philippines",
+            "city": "Fuerte",
+            "streetName": "Roxbury",
+            "postalCode": "2703"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Will",
+        "lastName": "Lickorish",
+        "phoneNumber": "167-793-8498",
+        "email": "wlickorish2@craigslist.org",
+        "password": 123456,
+        "age": 64,
+        "address": {
+            "country": "China",
+            "city": "Heshan",
+            "streetName": "Sunnyside"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Benedicto",
+        "lastName": "Caddies",
+        "phoneNumber": "248-853-2507",
+        "email": "bcaddies3@tinypic.com",
+        "password": 123456,
+        "age": 99,
+        "address": {
+            "country": "Sweden",
+            "city": "Kumla",
+            "state": "T",
+            "streetName": "Emmet",
+            "postalCode": "692 24"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Brena",
+        "lastName": "Tomovic",
+        "phoneNumber": "108-578-5742",
+        "email": "btomovic4@intel.com",
+        "password": 123456,
+        "age": 40,
+        "address": {
+            "country": "China",
+            "city": "Huoqiu Chengguanzhen",
+            "streetName": "Vahlen"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Perry",
+        "lastName": "Cron",
+        "phoneNumber": "440-206-4635",
+        "email": "pcron5@discuz.net",
+        "password": 123456,
+        "age": 72,
+        "address": {
+            "country": "Lebanon",
+            "city": "Sidon",
+            "streetName": "School"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Ammamaria",
+        "lastName": "Benedicto",
+        "phoneNumber": "892-782-9090",
+        "email": "abenedicto6@fda.gov",
+        "password": 123456,
+        "age": 50,
+        "address": {
+            "country": "Bolivia",
+            "city": "La Bélgica",
+            "streetName": "Saint Paul"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Lynett",
+        "lastName": "Janata",
+        "phoneNumber": "935-564-2197",
+        "email": "ljanata7@amazon.com",
+        "password": 123456,
+        "age": 79,
+        "address": {
+            "country": "France",
+            "city": "Vitry-sur-Seine",
+            "state": "A8",
+            "streetName": "Haas",
+            "postalCode": "94785 CEDEX"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Sherye",
+        "lastName": "Alfonsini",
+        "phoneNumber": "394-464-7178",
+        "email": "salfonsini8@nhs.uk",
+        "password": 123456,
+        "age": 33,
+        "address": {
+            "country": "France",
+            "city": "Tassin-la-Demi-Lune",
+            "state": "B9",
+            "streetName": "Di Loreto",
+            "postalCode": "69814 CEDEX"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Delano",
+        "lastName": "Utridge",
+        "phoneNumber": "572-995-2852",
+        "email": "dutridge9@dagondesign.com",
+        "password": 123456,
+        "age": 46,
+        "address": {
+            "country": "Poland",
+            "city": "Skomlin",
+            "streetName": "Village",
+            "postalCode": "98-346"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Oby",
+        "lastName": "Maryon",
+        "phoneNumber": "382-314-2369",
+        "email": "omaryona@is.gd",
+        "password": 123456,
+        "age": 66,
+        "address": {
+            "country": "Sweden",
+            "city": "Skutskär",
+            "state": "C",
+            "streetName": "Crownhardt",
+            "postalCode": "814 41"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Clevie",
+        "lastName": "Tremolieres",
+        "phoneNumber": "783-934-4802",
+        "email": "ctremolieresb@ihg.com",
+        "password": 123456,
+        "age": 32,
+        "address": {
+            "country": "Ukraine",
+            "city": "Berehomet",
+            "streetName": "Buena Vista"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Heda",
+        "lastName": "Cowans",
+        "phoneNumber": "103-181-6029",
+        "email": "hcowansc@macromedia.com",
+        "password": 123456,
+        "age": 63,
+        "address": {
+            "country": "Indonesia",
+            "city": "Sukawening",
+            "streetName": "Sullivan"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Klemens",
+        "lastName": "Verring",
+        "phoneNumber": "345-147-8935",
+        "email": "kverringd@mozilla.com",
+        "password": 123456,
+        "age": 89,
+        "address": {
+            "country": "Indonesia",
+            "city": "Munjungan",
+            "streetName": "Hollow Ridge"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Arlana",
+        "lastName": "Gritsunov",
+        "phoneNumber": "575-313-1049",
+        "email": "agritsunove@dyndns.org",
+        "password": 123456,
+        "age": 86,
+        "address": {
+            "country": "France",
+            "city": "Paris 09",
+            "state": "A8",
+            "streetName": "Oak",
+            "postalCode": "75312 CEDEX 09"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Ethelyn",
+        "lastName": "Jollie",
+        "phoneNumber": "714-951-9546",
+        "email": "ejollief@arstechnica.com",
+        "password": 123456,
+        "age": 40,
+        "address": {
+            "country": "Portugal",
+            "city": "Valada",
+            "state": "14",
+            "streetName": "Brown",
+            "postalCode": "2070-510"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Rooney",
+        "lastName": "Lamborne",
+        "phoneNumber": "576-836-5008",
+        "email": "rlamborneg@unc.edu",
+        "password": 123456,
+        "age": 25,
+        "address": {
+            "country": "Japan",
+            "city": "Susaki",
+            "streetName": "Gerald",
+            "postalCode": "987-0352"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Rosmunda",
+        "lastName": "MacLaverty",
+        "phoneNumber": "990-448-7164",
+        "email": "rmaclavertyh@stumbleupon.com",
+        "password": 123456,
+        "age": 78,
+        "address": {
+            "country": "Russia",
+            "city": "Kachug",
+            "streetName": "Beilfuss",
+            "postalCode": "665824"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Fredrika",
+        "lastName": "Edlington",
+        "phoneNumber": "440-415-1941",
+        "email": "fedlingtoni@telegraph.co.uk",
+        "password": 123456,
+        "age": 82,
+        "address": {
+            "country": "Pakistan",
+            "city": "Ghauspur",
+            "streetName": "Algoma",
+            "postalCode": "73201"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Tore",
+        "lastName": "Keysall",
+        "phoneNumber": "205-502-0974",
+        "email": "tkeysallj@indiatimes.com",
+        "password": 123456,
+        "age": 54,
+        "address": {
+            "country": "Serbia",
+            "city": "Čačak",
+            "streetName": "American Ash"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Hayward",
+        "lastName": "Rysdale",
+        "phoneNumber": "701-995-7431",
+        "email": "hrysdalek@ow.ly",
+        "password": 123456,
+        "age": 61,
+        "address": {
+            "country": "Israel",
+            "city": "Savyon",
+            "streetName": "Roth"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Addie",
+        "lastName": "Bonwell",
+        "phoneNumber": "351-269-4486",
+        "email": "abonwelll@soup.io",
+        "password": 123456,
+        "age": 51,
+        "address": {
+            "country": "French Polynesia",
+            "city": "Fare",
+            "streetName": "Haas"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Liz",
+        "lastName": "McGrayle",
+        "phoneNumber": "408-911-0106",
+        "email": "lmcgraylem@twitpic.com",
+        "password": 123456,
+        "age": 60,
+        "address": {
+            "country": "United States",
+            "city": "Sunnyvale",
+            "state": "CA",
+            "streetName": "Sommers",
+            "postalCode": "94089"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Hana",
+        "lastName": "Camacke",
+        "phoneNumber": "952-410-9786",
+        "email": "hcamacken@chronoengine.com",
+        "password": 123456,
+        "age": 81,
+        "address": {
+            "country": "Philippines",
+            "city": "Bundoc",
+            "streetName": "Rigney",
+            "postalCode": "3515"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Britni",
+        "lastName": "Scutter",
+        "phoneNumber": "858-828-2590",
+        "email": "bscuttero@vinaora.com",
+        "password": 123456,
+        "age": 52,
+        "address": {
+            "country": "Costa Rica",
+            "city": "Ipís",
+            "streetName": "Bay",
+            "postalCode": "10805"
+        }
+    }
+]

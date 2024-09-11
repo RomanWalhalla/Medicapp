@@ -1,0 +1,492 @@
+[
+    {
+        "role": "doctor",
+        "firstName": "Eldredge",
+        "lastName": "Fransewich",
+        "phoneNumber": "695-952-6139",
+        "email": "efransewich0@twitpic.com",
+        "password": 123456,
+        "age": 20,
+        "gender": "Female",
+        "address": {
+            "country": "Andorra",
+            "city": "Ordino",
+            "streetName": "Logan",
+            "postalCode": "AD300"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "O-",
+            "allergies": "Dust"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Adel",
+        "lastName": "Hancell",
+        "phoneNumber": "184-887-6224",
+        "email": "ahancell1@pinterest.com",
+        "password": 123456,
+        "age": 35,
+        "gender": "Male",
+        "address": {
+            "country": "Indonesia",
+            "city": "Lewograran",
+            "streetName": "Northwestern",
+            "postalCode": "500 40"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "AB+",
+            "allergies": "Penicillin"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Allie",
+        "lastName": "Heminsley",
+        "phoneNumber": "322-350-2519",
+        "email": "aheminsley2@ucoz.ru",
+        "password": 123456,
+        "age": 44,
+        "gender": "Female",
+        "address": {
+            "country": "Sweden",
+            "city": "Vadstena",
+            "state": "E",
+            "streetName": "Crownhardt",
+            "postalCode": "592 40"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "A-",
+            "allergies": "Penicillin"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Florry",
+        "lastName": "Phython",
+        "phoneNumber": "553-200-9987",
+        "email": "fphython3@techcrunch.com",
+        "password": 123456,
+        "age": 72,
+        "gender": "Female",
+        "address": {
+            "country": "China",
+            "city": "Ji’ergele Teguoleng",
+            "streetName": "Spohn",
+            "medicalCharacteristics": {
+                "bloodType": "A-",
+                "allergies": "Peanuts"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Kane",
+        "lastName": "Duck",
+        "phoneNumber": "275-242-5116",
+        "email": "kduck4@arstechnica.com",
+        "password": 123456,
+        "age": 90,
+        "gender": "Female",
+        "address": {
+            "country": "China",
+            "city": "Boyang",
+            "streetName": "3rd",
+            "medicalCharacteristics": {
+                "bloodType": "O-",
+                "allergies": "Pollen"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Malory",
+        "lastName": "de Cullip",
+        "phoneNumber": "919-882-6475",
+        "email": "mdecullip5@tmall.com",
+        "password": 123456,
+        "age": 38,
+        "gender": "Male",
+        "address": {
+            "country": "Brazil",
+            "city": "João Monlevade",
+            "streetName": "Westerfield",
+            "postalCode": "35930-000"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "O+",
+            "allergies": "Peanuts"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Laurene",
+        "lastName": "Percifer",
+        "phoneNumber": "578-726-6871",
+        "email": "lpercifer6@usda.gov",
+        "password": 123456,
+        "age": 44,
+        "gender": "Female",
+        "address": {
+            "country": "Bulgaria",
+            "city": "Pliska",
+            "streetName": "Rusk",
+            "postalCode": "9959"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "A-",
+            "allergies": "Penicillin"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Rachele",
+        "lastName": "Clamp",
+        "phoneNumber": "488-799-4840",
+        "email": "rclamp7@unicef.org",
+        "password": 123456,
+        "age": 86,
+        "gender": "Male",
+        "address": {
+            "country": "Philippines",
+            "city": "General Luna",
+            "streetName": "Nancy",
+            "postalCode": "5419"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "O+",
+            "allergies": "Peanuts"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Brier",
+        "lastName": "Skurm",
+        "phoneNumber": "570-119-0978",
+        "email": "bskurm8@disqus.com",
+        "password": 123456,
+        "age": 20,
+        "gender": "Male",
+        "address": {
+            "country": "Philippines",
+            "city": "Bolboc",
+            "streetName": "1st",
+            "postalCode": "1128"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "A-",
+            "allergies": "Pollen"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Tessie",
+        "lastName": "Vondrach",
+        "phoneNumber": "269-536-9244",
+        "email": "tvondrach9@zimbio.com",
+        "password": 123456,
+        "age": 18,
+        "gender": "Female",
+        "address": {
+            "country": "Ivory Coast",
+            "city": "Boundiali",
+            "streetName": "Menomonie",
+            "medicalCharacteristics": {
+                "bloodType": "AB+",
+                "allergies": "Penicillin"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Cornelius",
+        "lastName": "Tinton",
+        "phoneNumber": "648-873-2325",
+        "email": "ctintona@baidu.com",
+        "password": 123456,
+        "age": 23,
+        "gender": "Female",
+        "address": {
+            "country": "Norway",
+            "city": "Larvik",
+            "state": "07",
+            "streetName": "Mifflin",
+            "postalCode": "3271"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "AB-",
+            "allergies": "Penicillin"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Poul",
+        "lastName": "Forgie",
+        "phoneNumber": "447-834-2651",
+        "email": "pforgieb@boston.com",
+        "password": 123456,
+        "age": 86,
+        "gender": "Female",
+        "address": {
+            "country": "Indonesia",
+            "city": "Karangpocok",
+            "streetName": "Barby",
+            "medicalCharacteristics": {
+                "bloodType": "A+",
+                "allergies": "Peanuts"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Basilio",
+        "lastName": "Macek",
+        "phoneNumber": "596-245-1422",
+        "email": "bmacekc@feedburner.com",
+        "password": 123456,
+        "age": 53,
+        "gender": "Male",
+        "address": {
+            "country": "Sweden",
+            "city": "Stockholm",
+            "state": "AB",
+            "streetName": "Melby",
+            "postalCode": "101 56"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "B+",
+            "allergies": "Dust"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Emmye",
+        "lastName": "Widdup",
+        "phoneNumber": "244-834-1137",
+        "email": "ewiddupd@businessinsider.com",
+        "password": 123456,
+        "age": 82,
+        "gender": "Male",
+        "address": {
+            "country": "China",
+            "city": "Qiongshan",
+            "streetName": "Kenwood",
+            "medicalCharacteristics": {
+                "bloodType": "A-",
+                "allergies": "Dust"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Cacilie",
+        "lastName": "Muldownie",
+        "phoneNumber": "104-356-7716",
+        "email": "cmuldowniee@google.es",
+        "password": 123456,
+        "age": 65,
+        "gender": "Female",
+        "address": {
+            "country": "Indonesia",
+            "city": "Karano",
+            "streetName": "Fieldstone",
+            "medicalCharacteristics": {
+                "bloodType": "A-",
+                "allergies": "Pollen"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Hanni",
+        "lastName": "Salter",
+        "phoneNumber": "983-666-2916",
+        "email": "hsalterf@about.com",
+        "password": 123456,
+        "age": 79,
+        "gender": "Male",
+        "address": {
+            "country": "China",
+            "city": "Du’ermenqin",
+            "streetName": "Mallard",
+            "medicalCharacteristics": {
+                "bloodType": "B+",
+                "allergies": "Dust"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Nataniel",
+        "lastName": "Mc Caughen",
+        "phoneNumber": "789-110-0714",
+        "email": "nmccaugheng@merriam-webster.com",
+        "password": 123456,
+        "age": 72,
+        "gender": "Male",
+        "address": {
+            "country": "Czech Republic",
+            "city": "Vojkovice",
+            "streetName": "Badeau",
+            "postalCode": "739 51"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "O+",
+            "allergies": "Penicillin"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Bruno",
+        "lastName": "Algate",
+        "phoneNumber": "827-660-2154",
+        "email": "balgateh@exblog.jp",
+        "password": 123456,
+        "age": 27,
+        "gender": "Male",
+        "address": {
+            "country": "Portugal",
+            "city": "Loureiro",
+            "state": "16",
+            "streetName": "Randy",
+            "postalCode": "4980-744"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "AB+",
+            "allergies": "Penicillin"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Martynne",
+        "lastName": "Kesterton",
+        "phoneNumber": "307-204-0926",
+        "email": "mkestertoni@people.com.cn",
+        "password": 123456,
+        "age": 79,
+        "gender": "Male",
+        "address": {
+            "country": "Canada",
+            "city": "Willowdale",
+            "state": "ON",
+            "streetName": "Grayhawk",
+            "postalCode": "M3H"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "O-",
+            "allergies": "Pollen"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Bertrando",
+        "lastName": "Romaynes",
+        "phoneNumber": "603-836-2844",
+        "email": "bromaynesj@aboutads.info",
+        "password": 123456,
+        "age": 81,
+        "gender": "Male",
+        "address": {
+            "country": "Ghana",
+            "city": "Tarkwa",
+            "streetName": "Farwell",
+            "medicalCharacteristics": {
+                "bloodType": "AB+",
+                "allergies": "Pollen"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Merle",
+        "lastName": "Benning",
+        "phoneNumber": "683-344-4693",
+        "email": "mbenningk@ted.com",
+        "password": 123456,
+        "age": 34,
+        "gender": "Female",
+        "address": {
+            "country": "Russia",
+            "city": "Neklyudovo",
+            "streetName": "Marcy",
+            "postalCode": "606470"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "O-",
+            "allergies": "Pollen"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Amalle",
+        "lastName": "Leasor",
+        "phoneNumber": "937-295-2715",
+        "email": "aleasorl@un.org",
+        "password": 123456,
+        "age": 81,
+        "gender": "Female",
+        "address": {
+            "country": "France",
+            "city": "Dunkerque",
+            "state": "B4",
+            "streetName": "Elmside",
+            "postalCode": "59376 CEDEX 1"
+        },
+        "medicalCharacteristics": {
+            "bloodType": "B-",
+            "allergies": "Pollen"
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Marcelle",
+        "lastName": "Gori",
+        "phoneNumber": "477-815-1906",
+        "email": "mgorim@mediafire.com",
+        "password": 123456,
+        "age": 80,
+        "gender": "Male",
+        "address": {
+            "country": "Tanzania",
+            "city": "Kahama",
+            "streetName": "Manitowish",
+            "medicalCharacteristics": {
+                "bloodType": "AB+",
+                "allergies": "Peanuts"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Dorian",
+        "lastName": "Tacon",
+        "phoneNumber": "823-148-7356",
+        "email": "dtaconn@usda.gov",
+        "password": 123456,
+        "age": 49,
+        "gender": "Female",
+        "address": {
+            "country": "Morocco",
+            "city": "Taghazout",
+            "streetName": "Schlimgen",
+            "medicalCharacteristics": {
+                "bloodType": "O-",
+                "allergies": "Penicillin"
+            }
+        }
+    },
+    {
+        "role": "doctor",
+        "firstName": "Gauthier",
+        "lastName": "Verbrugghen",
+        "phoneNumber": "914-315-9147",
+        "email": "gverbruggheno@icq.com",
+        "password": 123456,
+        "age": 87,
+        "address": {
+            "country": "Tunisia",
+            "city": "El Ksour",
+            "streetName": "Di Loreto"
+        }
+    }
+]

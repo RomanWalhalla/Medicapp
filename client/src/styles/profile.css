@@ -1,0 +1,172 @@
+/* Profile Logo */
+
+.profile_container {
+    display: block;
+    margin: 50px;
+    margin-top: 90px;
+    /* text-align: center; */
+    background-color: rgba(169, 169, 169, 0.749);
+    /* width: auto; */
+    padding: 15px 25px;
+} 
+
+.profile_container h2 {
+    margin: 10px;
+}
+
+.profile_container h3 {
+    margin: 15px;
+}
+
+.name_page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.role_name {
+    font-size: 20px;
+    color: rgb(185, 254, 64);
+}
+
+.profile_logo_div {
+    display: flex;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid grey;
+    
+}
+
+.profile_logo_imgdiv {
+    display: inline-flex;
+}
+
+.profile_logo_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 15px ;
+
+    
+}
+
+.profile_logo_text {
+    font-size: 20px;
+    align-self: center;
+    line-height: 30px;
+    margin: 5px;
+}
+
+.profile_logo_divbtn {
+    display: flex; 
+    align-items: center;
+    /* margin: 10px;  */
+}
+
+.profile_logo_button {
+    font-size: 15px;
+    border-radius: 20px;
+    width: 60px;
+    line-height: 25px;
+    margin: 20px 10px;
+    background-color: blue;
+    color: aliceblue;
+}
+
+.profile_logo_button:hover {
+    cursor: pointer;
+    background-color: aqua;
+}
+
+/* ________________________________________________________________ */
+
+/* personal Information */
+
+.personal_inf_div {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid grey;
+    
+}
+
+.personal_inf_divbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.personal_inf_button {
+    font-size: 15px;
+    border-radius: 20px;
+    width: 60px;
+    line-height: 25px;
+    margin: 20px 10px;
+    background-color: blue;
+    color: aliceblue;
+}
+
+.personal_inf_button:hover {
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.data_information_div {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.data_information_div span, .address_div span {
+    color: brown;
+}
+
+.data_information_all, .data_address_all {
+    line-height: 25px;
+    margin: 5px 15px;
+    /* background-color: rgba(240, 248, 255, 0.571); */
+    color: rgb(70, 64, 70);
+}
+
+/* Address */
+
+.address_div {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid grey;
+}
+
+.address_divbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.address_button {
+    font-size: 15px;
+    border-radius: 20px;
+    width: 60px;
+    line-height: 25px;
+    margin: 20px 10px;
+    background-color: blue;
+    color: aliceblue;
+}
+
+.address_button:hover {
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.address_inf_div {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/* .data_address_all {
+    line-height: 25px;
+    margin: 5px 15px;
+    color: rgb(70, 64, 70);
+} */

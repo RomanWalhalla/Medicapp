@@ -7,12 +7,17 @@ import path from "path";
 import mongoose from "mongoose";
 
 // import util from "util";
+const __dirname = import.meta.dirname;
 
 const app = express();
 app.use(express.json({ extended: true }));
 app.use("/api/auth", authRoutes);
 
-const __dirname = import.meta.dirname;
+app.use(express.static(path.resolve(__dirname, "../client/build")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 
 const PORT = process.env.PORT || 5000;
 
@@ -34,11 +39,7 @@ async function start() {
 }
 start()
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-});
 
 
 

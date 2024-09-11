@@ -1,0 +1,97 @@
+/* Appointments */
+
+.container_appointments {
+    margin: 70px auto;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content_appointments {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_doctors-img {
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search_doctors-shield {
+    width: 100px;
+    position: absolute;
+    right: 20px;
+    top: 90px;
+    z-index: -1;
+}
+
+.select_speciality {
+    background-color: blueviolet;
+    display: inline-block;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2px;
+    cursor: pointer;
+    min-width: 150px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.btn_speciality:hover {
+    background-color: aquamarine;
+}
+
+.form_search {
+    background-color: rgb(196, 255, 242);
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 400px;
+    border-radius: 20px;
+}
+
+/* .search_input {
+    background-color: rgb(196, 255, 242);
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    width: 45%;
+    height: 100%;
+    padding: 9px 14px;
+    font-size: 17px;
+
+}
+
+.search_button {
+    background-color: rgb(255, 0, 230);
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: -17px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_button:hover {
+    background-color: aqua;
+} */
+
+@media (max-width: 768px) {
+
+    .container_appointments {
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
