@@ -82,6 +82,9 @@ const refreshTokenIfNeeded = async (refreshToken, notifyError) => {
         body: JSON.stringify({ refreshToken })
     });
 
+    // console.log("refreshTokenIfNeeded - response", response.json());
+    
+
     if (!response.ok) {
         notifyError("Не удалось обновить токен - refreshTokenIfNeeded");
         throw new Error("Не удалось обновить токен");
@@ -96,7 +99,7 @@ const refreshTokenIfNeeded = async (refreshToken, notifyError) => {
     return newAccessToken;
 };
 
-const makeRequest = async (url, method, accessToken, body) => {
+const makeRequest = async (url, method, body, accessToken) => {
     return fetch(url, {
         method: method,
         headers: {
@@ -109,18 +112,15 @@ const makeRequest = async (url, method, accessToken, body) => {
 
 const fetchWithToken = async (url, method, body, notifyError) => {
     let { accessToken, refreshToken, userId } = JSON.parse(localStorage.getItem("userData"));
-
-    let response = await makeRequest(url, method, accessToken, body);
+    let response = await makeRequest(url, method, body, accessToken);
 
     if (response.status === 401 || response.status === 403) {
         notifyError("Token is obsolete or invalid - fetchWithToken")
-
         try {
             const newAccessToken = await refreshTokenIfNeeded(refreshToken, notifyError);
             // Обновляем токен в localStorage
             accessToken = newAccessToken;
             localStorage.setItem("userData", JSON.stringify({ accessToken, refreshToken, userId }));
-
             // Повторный запрос с новым токеном
             response = await makeRequest(url, method, accessToken, body);
         } catch (error) {
@@ -138,19 +138,37 @@ const fetchWithToken = async (url, method, body, notifyError) => {
 };
 
 // Использование в fetchUserProfile
-export const fetchUserProfile = async (userId, notifyError) => {
+export const fetchDataProfile = async (userId, notifyError) => {
     return fetchWithToken(`/api/auth/user/${userId}`, "GET", null, notifyError);
 };
-
-// Использование в UpdateUserProfile
-export const updateUserProfile = async (userId, updatedData, notifyError) => {
-    return fetchWithToken(`/api/auth/updateProfile/${userId}`, "PUT", updatedData, notifyError);
+// Использование в fetchDataNavbar
+export const fetchDataNavbar = async (userId, notifyError) => {
+    return fetchWithToken(`/api/auth/user/${userId}`, "GET", null, notifyError);
 };
-
-// Использование в UpdateUserProfile
+// Использование в fetchDataPatient
+export const fetchDataPatient = async (userId, notifyError) => {
+    return fetchWithToken(`/api/auth/user/${userId}`, "GET", null, notifyError);
+};
+// Использование в updateUserProfile
+export const updateDataProfile = async (userId, updatedData, notifyError) => {
+    return fetchWithToken(`/api/auth/updateDataProfile/${userId}`, "PUT", updatedData, notifyError);
+};
+// Использование в searchDoctors
 export const searchDoctors = async (userId, firstName, speciality, notifyError) => {
     return fetchWithToken(`/api/auth/searchDoctors/${userId}?doctorName=${firstName}&speciality=${speciality}`, "GET", null, notifyError);
 };
+// Использование в createUserAppointments
+export const createAppointments = async (userId, updatedData, notifyError) => {
+    return fetchWithToken(`/api/appointments/register/${userId}`, "POST", updatedData, notifyError);
+};
+// Использование в fetchAppointmentsData
+export const fetchAppointmentsData = async (userId, notifyError) => {
+    return fetchWithToken(`/api/appointments/user/${userId}`, "GET", null, notifyError);
+};
+
+
+
+
 
 
 

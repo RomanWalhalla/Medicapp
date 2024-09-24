@@ -86,6 +86,23 @@
     background-color: aqua;
 } */
 
+/* // ModalAppointments // _______________________ */
+
+/* .modal-box-appointment {
+    display: grid;
+    flex-direction: column;
+    background-color: blanchedalmond;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+
+.div-doctor {
+    text-align: center;
+} */
+
 @media (max-width: 768px) {
 
     .container_appointments {

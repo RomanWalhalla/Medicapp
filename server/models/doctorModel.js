@@ -7,6 +7,7 @@ const doctorSchema = new mongoose.Schema({
         required: true,
     },
     speciality: String,
+    experience: String,
     firstName: {
         type: String,
         required: true,
@@ -29,6 +30,7 @@ const doctorSchema = new mongoose.Schema({
         required: true,
     },
     refreshToken: String,
+    age: String,
     address: {
         country: {
             type: String,

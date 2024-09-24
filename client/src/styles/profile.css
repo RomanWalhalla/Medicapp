@@ -31,6 +31,7 @@
 .profile_logo_div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: blanchedalmond;
     border-radius: 10px;
     margin: 10px;
@@ -39,7 +40,7 @@
 }
 
 .profile_logo_imgdiv {
-    display: inline-flex;
+    display: flex;
 }
 
 .profile_logo_img {
@@ -47,8 +48,6 @@
     height: 60px;
     border-radius: 50%;
     margin: 15px ;
-
-    
 }
 
 .profile_logo_text {
@@ -60,11 +59,12 @@
 
 .profile_logo_divbtn {
     display: flex; 
+    justify-content: space-between;
     align-items: center;
     /* margin: 10px;  */
 }
 
-.profile_logo_button {
+.profile_logo_button, .personal_inf_button, .address_button {
     font-size: 15px;
     border-radius: 20px;
     width: 60px;
@@ -74,7 +74,7 @@
     color: aliceblue;
 }
 
-.profile_logo_button:hover {
+.profile_logo_button:hover, .personal_inf_button:hover, .address_button:hover  {
     cursor: pointer;
     background-color: aqua;
 }
@@ -98,7 +98,7 @@
     height: 50px;
 }
 
-.personal_inf_button {
+/* .personal_inf_button {
     font-size: 15px;
     border-radius: 20px;
     width: 60px;
@@ -106,12 +106,12 @@
     margin: 20px 10px;
     background-color: blue;
     color: aliceblue;
-}
+} */
 
-.personal_inf_button:hover {
+/* .personal_inf_button:hover {
     cursor: pointer;
     background-color: aqua;
-}
+} */
 
 .data_information_div {
     display: grid;
@@ -145,7 +145,7 @@
     height: 50px;
 }
 
-.address_button {
+/* .address_button {
     font-size: 15px;
     border-radius: 20px;
     width: 60px;
@@ -153,12 +153,12 @@
     margin: 20px 10px;
     background-color: blue;
     color: aliceblue;
-}
+} */
 
-.address_button:hover {
+/* .address_button:hover {
     cursor: pointer;
     background-color: aqua;
-}
+} */
 
 .address_inf_div {
     display: grid;

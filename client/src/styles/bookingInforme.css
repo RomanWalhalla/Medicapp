@@ -1,0 +1,38 @@
+/* // BookingInforme // */
+
+.informe-container {
+    background-color: rgba(75, 185, 185, 0.76);
+    padding: 10px;
+    position: fixed;
+    display: block;
+    /* display: ; */
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 180px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    line-height: 25px;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+/* .informe-div {} */
+
+.btn-close-appointment-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: rgb(190, 68, 68);
+    border: none;
+}
+
+.btn-close-appointment-modal:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+
+

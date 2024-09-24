@@ -3,6 +3,7 @@ dotenv.config();
 import chalk from "chalk";
 import express from "express";
 import authRoutes from "./routes/auth.routes.js";
+import appointmentsRoutes from "./routes/appointments.routes.js";
 import path from "path";
 import mongoose from "mongoose";
 
@@ -10,11 +11,16 @@ import mongoose from "mongoose";
 const __dirname = import.meta.dirname;
 
 const app = express();
+
+// Middleware //
 app.use(express.json({ extended: true }));
+// Routes //
 app.use("/api/auth", authRoutes);
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.use("/api/appointments", appointmentsRoutes);
 
+
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });

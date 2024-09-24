@@ -2,23 +2,31 @@ import "./navbar.css";
 import logo from "../../img/logo.png"
 import { Link, NavLink } from "react-router-dom";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Context } from "../../context/Context";
+import Context from "../../context/Context";
 import Login_foto_1 from "../../img/Login_foto_1.jpg"
 
 import { FaRegUser } from "react-icons/fa6";
 import { FcSettings } from "react-icons/fc";
+import { TbReportSearch } from "react-icons/tb";
 import { TbLogout } from "react-icons/tb";
 
+// import useLoadUserData from "../../api/loadUserData";
+import useLoadUserData from "../../api/loadUserData";
+
 const Navbar = () => {
+    const { logout, isLoggedIn, loading, setLoading /* notifyError, */ } = useContext(Context)
 
     // Menu Login //
     const [menuLoginOpen, setMenuLoginOpen] = useState(false)
     const menuRef = useRef(null)
+    
+    const { navbarData } = useLoadUserData("Navbar");
+    
     const menuLoginHandler = () => {
         // event.stopPropagation()
         setMenuLoginOpen(prevState => !prevState)
     }
-
+    
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -56,8 +64,13 @@ const Navbar = () => {
 
     // -------------------------------------------------------------------------------
 
-    const { logout, isLoggedIn, userData } = useContext(Context)
+    // if (loading) {
+    //     return <div>Loading...</div>; // Показываем индикатор загрузки, пока не загрузится начальное состояние
+    // }
 
+    if (!navbarData) {
+        return <div>Loading user data...</div>;
+    }
     // console.log("Navbar-userData", userData);
 
     return (
@@ -101,7 +114,7 @@ const Navbar = () => {
                         {isLoggedIn ? (
                             <div>
                                 <div className="logout_div">
-                                    <span className="logout_text">Welcome, <span className="logout_name">{userData.firstName}</span>  </span>
+                                    <span className="logout_text">Welcome, <span className="logout_name">{navbarData.firstName}</span>  </span>
                                     <span className="logout_foto" onClick={menuLoginHandler}><img src={Login_foto_1} alt="account" /></span>
                                 </div>
                                 {menuLoginOpen ? (
@@ -110,8 +123,8 @@ const Navbar = () => {
                                             <div className="menu_login_logo">
                                                 <img src={Login_foto_1} alt="account" />
                                                 <div className="menu_login_text">
-                                                    <span style={{ color: "white" }}>{userData.firstName}</span> <br />
-                                                    <span style={{ color: "darkblue" }}> {userData.email}</span>
+                                                    <span style={{ color: "white" }}>{navbarData.firstName}</span> <br />
+                                                    <span style={{ color: "darkblue" }}> {navbarData.email}</span>
                                                 </div>
                                             </div>
                                             <hr />
@@ -123,6 +136,11 @@ const Navbar = () => {
                                             <div className="menu_login">
                                                 <Link to="/profile/settings" onClick={menuLoginHandler}>
                                                     <FcSettings /> Account settings
+                                                </Link>
+                                            </div>
+                                            <div className="menu_login">
+                                                <Link to="/profile/reports" onClick={menuLoginHandler}>
+                                                    <TbReportSearch /> Reports
                                                 </Link>
                                             </div>
                                             <hr />

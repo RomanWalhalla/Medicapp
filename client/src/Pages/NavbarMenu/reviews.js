@@ -1,25 +1,42 @@
 import "../../styles/reviews.css"
 import { AgGridReact } from "ag-grid-react"
+import { Button } from "@mui/material"
 
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-quartz.css"
-import { useMemo, useState } from "react"
+import { /* useContext, useEffect, */ useEffect, useMemo, useState } from "react"
+// import Context from "../../context/Context"
+import useLoadUserData from "../../api/loadUserData"
+import ReviewModal from "./reviewModal"
 
 
-const ReviewsPage = () => {
-    const [rowData, /* setRowData */] = useState([
-        { id: "", number: "1", doctorName: "", doctorSpeciality: "", provideReview: "", reviewGiven: "" }
+const Reviews = () => {
+    // const { notifyError, notifySuccess } = useContext(Context)
+    // const [appointmentsServer, setAppointmentsServer] = useState("")
+    const [isOpenModal, setIsOpenModal] = useState(false)
+    const [selectedDoctor, setSelectedDoctor] = useState(null);
+    const [rowData, setRowData] = useState([
+        { id: "", number: "", doctorName: "", doctorSpeciality: "", provideReview: "", reviewGiven: "", isReviewSubmitted: false }
     ])
 
     // console.log("rowData", rowData);
 
-
-    // const [colDef, setColDef] = useState([
-
-    // ])
-
-    const renderCellButton = () => () => (
-        <button>Give Review</button>
+    const renderCellButton = () => (params) => (
+        // console.log("renderCellButton - params", params),
+        <>
+            <Button
+                onClick={() => {
+                    setSelectedDoctor(params.data);
+                    setIsOpenModal(true)
+                }
+                }
+                variant="contained"
+                disabled={params.data.isReviewSubmitted} // Деактивируем кнопку, если отзыв уже оставлен
+                sx={{fontSize: 9, width: "100%"}}
+            >
+                {params.data.isReviewSubmitted ? "Review Submitted" : "Give Review"}
+            </Button>
+        </>
     )
 
     const columnDataTable = useMemo(() => [
@@ -40,10 +57,32 @@ const ReviewsPage = () => {
         };
     }, []);
 
+    const { appointmentsData, appointmentsStatus } = useLoadUserData("Appointments");
+
+    // console.log("appointmentsData", appointmentsData);
+
+
+    useEffect(() => {
+        if (appointmentsStatus === "Loaded" && appointmentsData) {
+            // Преобразуем данные о бронированиях в формат rowData
+            const formattedData = appointmentsData.map((appointment, index) => ({
+                id: appointment._id,
+                number: index + 1,
+                doctorName: `${appointment.doctorId?.firstName || ""} ${appointment.doctorId?.lastName || ""}` || "Unknown",
+                doctorSpeciality: appointment.doctorId?.speciality || "Unknown",
+                provideReview: "",
+                reviewGiven: appointment.review || "Not Provided",
+                isReviewSubmitted: appointment.review ? true : false
+            }));
+
+            setRowData(formattedData);
+        }
+    }, [appointmentsData, appointmentsStatus]);
+
     return (
         <div className="reviewsPage_container">
+            <h2>Reviews</h2>
             <div className={"ag-theme-quartz-dark"} /* style={{ height: 360, width: "90%", margin: 30 }} */>
-                {/* <h1> Hello from ReviewsPage </h1> */}
                 <AgGridReact
                     // defaultColDef={{ sortable: true, filter: true }}
                     defaultColDef={defaultColDef}
@@ -54,8 +93,9 @@ const ReviewsPage = () => {
                 >
                 </AgGridReact>
             </div>
+            <ReviewModal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} setRowData={setRowData} selectedDoctor={selectedDoctor} />
         </div>
     );
 }
 
-export default ReviewsPage;
+export default Reviews;

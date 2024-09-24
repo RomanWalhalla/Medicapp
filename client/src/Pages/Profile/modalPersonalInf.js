@@ -3,25 +3,24 @@ import { useContext/* , useState  */ } from "react";
 import { Modal, Box, Button, TextField } from "@mui/material"
 // import { useHttp } from "../../hooks/http.hook";
 // import { useMessage } from "../../hooks/message.hook";
-import { Context } from "../../context/Context";
-import { updateUserProfile } from "../../api/userApi";
+import Context from "../../context/Context";
+import { updateDataProfile } from "../../api/userApi";
 import { useHttp } from "../../hooks/http.hook";
 
 
-const ModalPersonalInf = ({ activeSection, openModal, setOpenModal }) => {
+const ModalPersonalInf = ({ activeSection, openModal, setOpenModal, profileDataChanged, setProfileDataChanged }) => {
     // const navigate = useNavigate();
     // const { notifySuccess, notifyError, /* notifyWarn */ } = useMessage()
     const { loading, /* error, clearError, request, */ } = useHttp()
-    const { userData, setUserData, setLoading, notifyError, notifySuccess } = useContext(Context)
+    const { /* userData, setUserData, */ setLoading, notifyError, notifySuccess } = useContext(Context)
 
     const handleClose = () => setOpenModal(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        setUserData({ ...userData, [name]: value })
-
+        setProfileDataChanged({ ...profileDataChanged, [name]: value })
         if (["country", "city", "state", "streetName", "postalCode"].includes(name)) {
-            setUserData(prevState => ({
+            setProfileDataChanged(prevState => ({
                 ...prevState,
                 address: { ...prevState.address, [name]: value }
             }))
@@ -31,27 +30,24 @@ const ModalPersonalInf = ({ activeSection, openModal, setOpenModal }) => {
     const handleSaveClick = async () => {
         try {
             setLoading(true)
-            const { password, ...updatedData } = userData
             const userDataFromStorage = JSON.parse(localStorage.getItem("userData"));
             const { userId } = userDataFromStorage || {};
 
-            await updateUserProfile(userId, updatedData, notifyError)
-            // const data = await request("/api/auth/updateProfile", "PUT", { ...userData })
+            await updateDataProfile(userId, profileDataChanged, notifyError)
 
-            setUserData(prevDataUser =>
+            setProfileDataChanged(prevDataUser =>
             ({
                 ...prevDataUser,
-                firstName: updatedData.firstName,
-                lastName: updatedData.lastName,
-                phoneNumber: updatedData.phoneNumber,
-                email: updatedData.email,
+                firstName: profileDataChanged.firstName,
+                lastName: profileDataChanged.lastName,
+                phoneNumber: profileDataChanged.phoneNumber,
+                email: profileDataChanged.email,
                 address: {
-                    country: updatedData.address.country,
-                    city: updatedData.address.city,
-                    state: updatedData.address.state,
-                    streetName: updatedData.address.streetName,
-                    postalCode: updatedData.address.postalCode,
-
+                    country: profileDataChanged.address.country || "",
+                    city: profileDataChanged.address.city || "",
+                    state: profileDataChanged.address.state || "",
+                    streetName: profileDataChanged.address.streetName || "",
+                    postalCode: profileDataChanged.address.postalCode || "",
                 }
             })
             )
@@ -64,6 +60,7 @@ const ModalPersonalInf = ({ activeSection, openModal, setOpenModal }) => {
             notifyError(error)
         }
         finally {
+            handleClose()
             setLoading(false)
         }
     }
@@ -77,79 +74,128 @@ const ModalPersonalInf = ({ activeSection, openModal, setOpenModal }) => {
             ) : activeSection === "PersonalInf" ? (
                 <div>
                     <Modal open={openModal} onClose={handleClose}>
-                        <Box>
+                        <Box
+                            sx={{
+                                position: "absolute",
+                                top: "50%",
+                                transform: "translate(-50%, -50%)",
+                                left: "50%",
+                                height: "400",
+                                width: 300,
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                bgcolor: "teal",
+                                boxShadow: 24,
+                                p: 3,
+                                borderRadius: 2,
+                            }}
+                        >
                             <h2>Edit profile</h2>
                             <TextField
                                 label="FirstName"
                                 name="firstName"
-                                value={userData.firstName}
+                                value={profileDataChanged.firstName}
                                 onChange={handleChange}
+                                sx={{ mb: 2 }}
                             // fullWidth
                             />
                             <TextField
                                 label="LastName"
                                 name="lastName"
-                                value={userData.lastName}
+                                value={profileDataChanged.lastName}
                                 onChange={handleChange}
+                                sx={{ mb: 2 }}
                             // fullWidth
                             />
                             <TextField
                                 label="Email"
                                 name="email"
-                                value={userData.email}
+                                value={profileDataChanged.email}
                                 onChange={handleChange}
+                                sx={{ mb: 2 }}
                             // fullWidth
                             />
                             <TextField
                                 label="Phone"
                                 name="phoneNumber"
-                                value={userData.phoneNumber}
+                                value={profileDataChanged.phoneNumber}
                                 onChange={handleChange}
+                                sx={{ mb: 2 }}
                             // fullWidth
                             />
-                            <Button variant="contained" onClick={handleSaveClick}>Save</Button>
+                            <Button
+                                variant="contained"
+                                onClick={handleSaveClick}
+                                disabled={!profileDataChanged.firstName || !profileDataChanged.lastName || !profileDataChanged.email || !profileDataChanged.phoneNumber}
+                            >
+                                Save
+                            </Button>
                         </Box>
                     </Modal>
                 </div>
             ) : activeSection === "Address" ? (
                 <div>
                     <Modal open={openModal} onClose={handleClose}>
-                        <Box>
+                        <Box
+                            sx={{
+                                position: "absolute",
+                                top: "50%",
+                                transform: "translate(-50%, -50%)",
+                                left: "50%",
+                                height: "400",
+                                width: 300,
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                bgcolor: "teal",
+                                boxShadow: 24,
+                                p: 3,
+                                borderRadius: 2,
+                            }}
+                        >
                             <h2>Edit profile</h2>
                             <TextField
                                 label="Country"
                                 name="country"
-                                value={userData.address.country}
+                                value={profileDataChanged.address.country}
                                 onChange={handleChange}
                                 fullWidth
+                                sx={{ mb: 2 }}
                             />
                             <TextField
                                 label="City"
                                 name="city"
-                                value={userData.address.city}
+                                value={profileDataChanged.address.city}
                                 onChange={handleChange}
                                 fullWidth
+                                sx={{ mb: 2 }}
                             />
                             <TextField
                                 label="State"
                                 name="state"
-                                value={userData.address.state}
+                                value={profileDataChanged.address.state}
                                 onChange={handleChange}
                                 fullWidth
+                                sx={{ mb: 2 }}
                             />
                             <TextField
                                 label="Street Name"
                                 name="streetName"
-                                value={userData.address.streetName}
+                                value={profileDataChanged.address.streetName}
                                 onChange={handleChange}
                                 fullWidth
+                                sx={{ mb: 2 }}
                             />
                             <TextField
                                 label="Postal Code"
                                 name="postalCode"
-                                value={userData.address.postalCode}
+                                value={profileDataChanged.address.postalCode}
                                 onChange={handleChange}
                                 fullWidth
+                                sx={{ mb: 2 }}
                             />
                             <Button variant="contained" onClick={handleSaveClick}>Save</Button>
                         </Box>

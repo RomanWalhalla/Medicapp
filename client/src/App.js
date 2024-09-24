@@ -5,7 +5,7 @@ import Footer from "./Components/Footer/Footer";
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-import { Context } from "./context/Context.js";
+import Context from "./context/Context.js";
 import { useAuth } from "./hooks/auth.hook.js"
 import { useRoutes } from "./routes/routes.js";
 
@@ -15,25 +15,38 @@ import HealthBlogPage from "./Pages/NavbarMenu/healthBlog.js";
 import ReviewsPage from "./Pages/NavbarMenu/reviews.js";
 import AuthPage from "./Pages/NavbarMenu/auth.js";
 import { useMessage } from "./hooks/message.hook.js";
-import { useEffect, useState, /* useRef */ } from "react";
+import { /* useContext, */ useEffect, useState, /* useRef */ } from "react";
+import BookingInforme from "./Pages/NavbarMenu/Appointments/bookingInforme.js";
+// import useLoadUserData from "./api/loadUserData.js";
 
 function App() {
-  const { login, logout, loading, setLoading, userData, setUserData, initialState, isLoggedIn } = useAuth()
+  const { login, logout, loading, setLoading, /* userData, setUserData, */ initialState, isLoggedIn } = useAuth()
   const { notifySuccess, notifyError, notifyWarn, notifyInfo } = useMessage()
-  const routes = useRoutes(isLoggedIn, loading)
-
   const [initialLoading, setInitialLoading] = useState(true);
+  const [appointmentsPatient, setAppointmentsPatient] = useState("");
+
+  // console.log("appointmentsPatient", appointmentsPatient);
+
+  // Функция для получения данных из модального окна
+  const onAppointmentData = (data) => {
+    setAppointmentsPatient(data);
+  };
+
+  const routes = useRoutes(isLoggedIn, onAppointmentData)
 
   useEffect(() => {
     setInitialLoading(false);
   }, []);
 
+  // if (loading) {
+  //   return <div>Loading...</div>; // Показываем индикатор загрузки, пока не загрузится начальное состояние
+  // }
   if (initialLoading) {
     return <div>Loading...</div>; // Показываем индикатор загрузки, пока не загрузится начальное состояние
   }
 
   return (
-    <Context.Provider value={{ login, logout, userData, setUserData, loading, setLoading, isLoggedIn, initialState, notifySuccess, notifyError, notifyWarn, notifyInfo }}>
+    <Context.Provider value={{ login, logout, /* userData, setUserData, */ loading, setLoading, isLoggedIn, initialState, notifySuccess, notifyError, notifyWarn, notifyInfo }}>
       <div className="App">
         <BrowserRouter>
           <Navbar />
@@ -46,6 +59,7 @@ function App() {
             <Route path="/reviews" element={<ReviewsPage />} />
             {routes}
           </Routes>
+          <BookingInforme appointmentsPatient={appointmentsPatient} setAppointmentsPatient={setAppointmentsPatient}/>
           <Footer />
           <ToastContainer />
         </BrowserRouter>

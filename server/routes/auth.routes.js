@@ -10,8 +10,8 @@ import { check, validationResult } from "express-validator";
 import verifyToken from "../middlewares/verifyToken.js"
 
 import { promisify } from 'util';
-import mongoose from "mongoose";
 import validateUserId from "../middlewares/validateUserId.js";
+import validateRequest from "../middlewares/validateRequest.js";
 import { log } from "console";
 
 dotenv.config();
@@ -37,14 +37,6 @@ const logout = async (email) => {
     return patient || doctor
 }
 
-const validateRequest = (req, res, next) => {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array(), message: "Invalid input data" });
-    }
-    next()
-}
-
 // /api/auth/register //
 router.post(
     "/register", [
@@ -55,7 +47,10 @@ router.post(
     validateRequest,
     async (req, res) => {
         try {
-            const { role, firstName, phoneNumber, email, password, lastName, age, gender, address, medicalCharacteristics } = req.body;
+            const { role, firstName, phoneNumber, email, password, address, medicalCharacteristics } = req.body;
+
+            console.log(req.body);
+
             const userExists = await findUserByEmail(email);
             if (userExists) {
                 return res.status(400).json({ message: "Email already in use" });
@@ -65,17 +60,17 @@ router.post(
             const newUser = {
                 role,
                 firstName,
-                // lastName,
+                lastName: "",
                 phoneNumber,
                 email,
                 password: hashedPassword,
-                // age,
-                // gender,
+                age: "",
+                gender: "",
                 address: {
-                    country: address.country,
-                    cityState: address.cityState,
-                    streetName: address.streetName,
-                    postalCode: address.postalCode,
+                    country: address?.country,
+                    cityState: address?.cityState,
+                    streetName: address?.streetName,
+                    postalCode: address?.postalCode,
                 },
                 medicalCharacteristics: {
                     bloodType: medicalCharacteristics?.bloodType || "",
@@ -195,17 +190,19 @@ router.get("/user/:userId", validateUserId, async (req, res) => {
 })
 
 // /api/auth/refreshToken //
-router.post("/api/auth/refreshToken", verifyToken, async (req, res) => {
+router.post("/refreshToken", /* verifyToken, */ async (req, res) => {
+    console.log("refreshToken");
     const refreshToken = req.body.refreshToken
     if (!refreshToken) {
         return res.status(403).json({ success: false, message: "Refresh token not provided" });
     }
+
     try {
         const decoded = jwt.verify(refreshToken, refreshSecret)
         const newAccessToken = jwt.sign({ userId: decoded.userId }, accessSecret, { expiresIn: "1h" })
 
-        req.accessToken = newAccessToken
-        req.userId = decoded.userId
+        return res.status(200).json({ success: true, newAccessToken: newAccessToken });
+
         // next()
     } catch (error) {
         return res.status(403).json({ success: false, message: "Invalid refresh token" });
@@ -213,8 +210,10 @@ router.post("/api/auth/refreshToken", verifyToken, async (req, res) => {
 })
 
 // /api/auth/updateProfile/:userId //
-router.put("/updateProfile/:userId", verifyToken, validateUserId, async (req, res) => {
+router.put("/updateDataProfile/:userId", verifyToken, validateUserId, async (req, res) => {
     try {
+        console.log("111111111");
+
         const { userId } = req.params
         const { ...updateData } = req.body
 
@@ -240,11 +239,7 @@ router.get("/searchDoctors/:userId", async (req, res) => {
 
     // console.log("req.query", req.query);
 
-    // const { userId } = req.params
     const { firstName, speciality } = req.query
-
-    // console.log("speciality", speciality);
-
     let query = {}
 
     if (firstName) {

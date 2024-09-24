@@ -3,7 +3,7 @@ import React, { useContext, /* useEffect, */ useState } from 'react';
 
 // import chalk from "chalk"
 import { useHttp } from '../../hooks/http.hook';
-import { Context } from "../../context/Context";
+import Context from "../../context/Context";
 
 import "../../styles/Auth.css"
 

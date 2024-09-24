@@ -10,12 +10,18 @@ async function verifyToken(req, res, next) {
 
     // const token = authHeader && authHeader.split(" ")[1]
     if (!accessToken)
-        return res.status(401).json({ success: false, message: "Don`t have accessToken, Authorization failed - verifyToken" })
+        return res.status(403).json({ success: false, message: "Don`t have accessToken, Authorization failed - verifyToken" })
     try {
         const decoded = jwt.verify(accessToken, accessSecret)
         req.userId = decoded.userId
         next()
     } catch (error) {
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ message: 'Token expired' });
+        } else {
+            return res.status(403).json({ message: 'Failed to authenticate token' });
+        }
+        // console.log(error);  
         // if (error.name === "TokenExpiredError") {
 
         //     const refreshToken = req.body.refreshToken
