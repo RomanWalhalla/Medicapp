@@ -1,11 +1,11 @@
-import dotenv from "dotenv"
+import dotenv from 'dotenv';
 dotenv.config();
-import chalk from "chalk";
-import express from "express";
-import authRoutes from "./routes/auth.routes.js";
-import appointmentsRoutes from "./routes/appointments.routes.js";
-import path from "path";
-import mongoose from "mongoose";
+import chalk from 'chalk';
+import express from 'express';
+import authRoutes from './routes/auth.routes.js';
+import appointmentsRoutes from './routes/appointments.routes.js';
+import path from 'path';
+import mongoose from 'mongoose';
 
 // import util from "util";
 const __dirname = import.meta.dirname;
@@ -15,14 +15,14 @@ const app = express();
 // Middleware //
 app.use(express.json({ extended: true }));
 // Routes //
-app.use("/api/auth", authRoutes);
+app.use('/api/auth', authRoutes);
 
-app.use("/api/appointments", appointmentsRoutes);
+app.use('/api/appointments', appointmentsRoutes);
 
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
@@ -31,19 +31,19 @@ async function start() {
     try {
         await mongoose.connect(process.env.MONGO_URI)
             .then(() => console.log(chalk.bgGreenBright.bold.underline('MongoDB connected')))
-            .catch((err) => console.log(chalk.bgRed.bold.underline("DB error") + err));
+            .catch((err) => console.log(chalk.bgRed.bold.underline('DB error') + err));
 
         app.listen(PORT, () => {
             // console.log("%c Server", "color:white; background color: yellow", `Server is running on port ${PORT}`);
-            console.log(chalk.red.bold("Server is running on port ") + chalk.cyan.bold.underline(PORT)
+            console.log(chalk.red.bold('Server is running on port ') + chalk.cyan.bold.underline(PORT)
             );
         });
     } catch (error) {
-        console.log(chalk.bgRed("Server Error", error.message))
-        process.exit(1)
+        console.log(chalk.bgRed('Server Error', error.message));
+        process.exit(1);
     }
 }
-start()
+start();
 
 
 

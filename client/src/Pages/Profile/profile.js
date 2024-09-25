@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, /* useEffect, useMemo, */ useState } from 'react';
+import React, { /* useContext, */ useEffect, /* useEffect, useMemo, */ useState } from 'react';
 import "../../styles/profile.css"
 import Login_foto_1 from "../../img/Login_foto_1.jpg"
 import { AiOutlineEdit } from "react-icons/ai";
 import ModalPersonalInf from './modalPersonalInf';
 // import { fetchUserProfile } from '../../api/userApi';
-import Context from '../../context/Context';
+// import Context from '../../context/Context';
 import useLoadUserData from '../../api/loadUserData';
 
 const Profile = () => {
     const [activeSection, setActiveSection] = useState(null)
     const [openModal, setOpenModal] = useState(false)
-    const { loading /* setUserData, notifySuccess, notifyError,setLoading  */ } = useContext(Context)
+    // const { loading /* setUserData, notifySuccess, notifyError,setLoading  */ } = useContext(Context)
 
     const { profileData } = useLoadUserData("Profile");
 
     useEffect(() => {
-        setProfileDataChanged(profileData);        
+        setProfileDataChanged(profileData);
     }, [profileData]);
 
     const [profileDataChanged, setProfileDataChanged] = useState("")

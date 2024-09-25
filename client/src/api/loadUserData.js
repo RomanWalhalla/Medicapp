@@ -1,15 +1,8 @@
-import { useContext, useEffect, /* useMemo, */ useState, useReducer, useMemo, useCallback } from "react";
+import { useContext, useEffect, /* useMemo, */ useState, /* useReducer, */ useMemo, useCallback } from "react";
 import Context from "../context/Context.js"
 import { fetchDataPatient, fetchDataNavbar, fetchDataProfile, fetchAppointmentsData } from "./userApi";
 
 const useLoadUserData = (status) => {
-
-    const initialDataState = {
-        profile: false,
-        navbar: false,
-        patient: false,
-        appointments: false,
-    };
 
     const { notifyError, notifySuccess, /* loading, */ setLoading, initialState } = useContext(Context)
     const [profileData, setProfileData] = useState(initialState)
@@ -22,25 +15,7 @@ const useLoadUserData = (status) => {
     const [patientStatus, setPatientStatus] = useState("")
     const [appointmentsStatus, setAppointmentsStatus] = useState("")
 
-    const dataLoadedReducer = (state, action) => {
-        switch (action.type) {
-            case "PROFILE_LOADED":
-                return { ...state, profile: true };
-            case "NAVBAR_LOADED":
-                return { ...state, navbar: true };
-            case "PATIENT_LOADED":
-                return { ...state, patient: true };
-            case "APPOINTMENTS_LOADED":
-                return { ...state, appointments: true };
-            default:
-                return { ...state }
-        }
-    };
-    const [dataLoaded, dispatch] = useReducer(dataLoadedReducer, initialDataState);
-    
-    // console.log("profileStatus", profileStatus);
-    // console.log("navbarStatus", navbarStatus);
-    // console.log("patientStatus", patientStatus);
+
 
     const userDataFromStorage = useMemo(() => JSON.parse(localStorage.getItem("userData")), []);
     const { userId, accessToken } = userDataFromStorage || {};
@@ -82,7 +57,7 @@ const useLoadUserData = (status) => {
             }
             // Задержка перед вызовом dispatch
             // await delay(100);
-            dispatch({ type: actionType });
+            // dispatch({ type: actionType });
             notifySuccess("Data loaded successfully");
 
         } catch (error) {
@@ -118,6 +93,32 @@ export default useLoadUserData
 
 
 
+
+// const initialDataState = {
+//     profile: false,
+//     navbar: false,
+//     patient: false,
+//     appointments: false,
+// };
+
+// const dataLoadedReducer = (state, action) => {
+//     switch (action.type) {
+//         case "PROFILE_LOADED":
+//             return { ...state, profile: true };
+//         case "NAVBAR_LOADED":
+//             return { ...state, navbar: true };
+//         case "PATIENT_LOADED":
+//             return { ...state, patient: true };
+//         case "APPOINTMENTS_LOADED":
+//             return { ...state, appointments: true };
+//         default:
+//             return { ...state }
+//     }
+// };
+// const [dataLoaded, dispatch] = useReducer(dataLoadedReducer, initialDataState);
+
+
+
 // const loadData = () => {
 //     switch (status) {
 //         case "Profile":
@@ -140,13 +141,13 @@ export default useLoadUserData
 //     }
 // };
 
+
+
 //     useEffect(() => {
 //         const loadUserData = async () => {
 //             setLoading(true)
-
 //             const userDataFromStorage = JSON.parse(localStorage.getItem("userData"));
 //             const { userId, accessToken } = userDataFromStorage || {};
-
 //             if (!userId || !accessToken) {
 //                 notifyError("User not authorized")
 //                 setLoading(false)
@@ -166,7 +167,6 @@ export default useLoadUserData
 //                     }
 //                     )
 //                 }
-
 //                 if (status === "Navbar") {
 //                     const navbarDataUpdate = await fetchUserProfile(userId, notifyError)
 //                     setNavbarData(prevDataUser => {
@@ -196,7 +196,6 @@ export default useLoadUserData
 //             } catch (error) {
 //                 notifyError("Error-profileDataUpdate in profile.js")
 //                 console.log("Error-loadUserData", error)
-
 //                 // notifyError(error.ProfileDataUpdate.data.message)
 //             } finally {
 //                 setLoading(false)
@@ -205,18 +204,9 @@ export default useLoadUserData
 //         if (!memoizedData || !memoizedData.firstName) {
 //             loadUserData()
 //         }
-
 //     }, [notifyError, notifySuccess, setLoading, memoizedData, setNavbarData, setProfileData, status])
-
-
 //     return { profileData, navbarData, patientData }
 // }
-
-
-
-
-
-
 
 
 // useEffect(() => {

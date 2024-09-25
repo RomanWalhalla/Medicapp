@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true, // Это говорит ESLint, что код работает в браузере
+        // "es2021": true, // Включаем поддержку современных возможностей JavaScript (ES2021)
+        "node": true, // Если у тебя есть серверный код (например, через Node.js)
+        "es6": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true // Указываем, что в проекте используется JSX (React)
+        },
+        "ecmaVersion": 2021, // Указываем версию ECMAScript, которую используем (12 — это ES2021)
+        "sourceType": "module" // Мы используем ES-модули (import/export)
+    },
+    "plugins": [
+    "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended", // Используем набор рекомендуемых правил от ESLint
+        "plugin:react/recommended", // Подключаем рекомендуемые правила для React
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "no-empty-function": "off", // Отключите правило, если оно вызывает ошибку
+        "@typescript-eslint/no-unused-vars": "warn",
+        // "no-unused-vars": "warn", // Предупреждение, если переменная объявлена, но не используется
+        "no-console": "off", // Отключаем правило, запрещающее использование console.log
+        "quotes": [
+            "error",
+            "single"
+        ], // Ошибка, если используются двойные кавычки вместо одинарных
+        "semi": [
+            "error",
+            "always"
+        ], // Требование точки с запятой в конце каждой строки
+        "react/prop-types": "off" // Отключаем проверку на PropTypes в компонентах React
+    },
+    "settings": {
+        "react": {
+            "version": "detect" // Автоматически определяем версию React
+        }
+    }
+}

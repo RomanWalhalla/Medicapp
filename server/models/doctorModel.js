@@ -1,9 +1,9 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
 const doctorSchema = new mongoose.Schema({
     role: {
         type: String,
-        default: "doctor",
+        default: 'doctor',
         required: true,
     },
     speciality: String,
