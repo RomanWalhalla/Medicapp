@@ -14,7 +14,7 @@ import { TbLogout } from "react-icons/tb";
 import useLoadUserData from "../../api/loadUserData";
 
 const Navbar = () => {
-    const { logout, isLoggedIn, loading, setLoading /* notifyError, */ } = useContext(Context)
+    const { logout, isLoggedIn, /* loading, setLoading  *//* notifyError, */ } = useContext(Context)
 
     // Menu Login //
     const [menuLoginOpen, setMenuLoginOpen] = useState(false)

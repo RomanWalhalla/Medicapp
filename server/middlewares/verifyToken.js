@@ -1,20 +1,20 @@
-import jwt from "jsonwebtoken"
-import dotenv from "dotenv"
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 dotenv.config();
 
-const accessSecret = process.env.JWT_ACCESS_SECRET
+const accessSecret = process.env.JWT_ACCESS_SECRET;
 // const refreshSecret = process.env.JWT_REFRESH_SECRET
 
 async function verifyToken(req, res, next) {
-    const accessToken = req.headers["authorization"]
+    const accessToken = req.headers['authorization'];
 
     // const token = authHeader && authHeader.split(" ")[1]
     if (!accessToken)
-        return res.status(403).json({ success: false, message: "Don`t have accessToken, Authorization failed - verifyToken" })
+        return res.status(403).json({ success: false, message: 'Don`t have accessToken, Authorization failed - verifyToken' });
     try {
-        const decoded = jwt.verify(accessToken, accessSecret)
-        req.userId = decoded.userId
-        next()
+        const decoded = jwt.verify(accessToken, accessSecret);
+        req.userId = decoded.userId;
+        next();
     } catch (error) {
         if (error.name === 'TokenExpiredError') {
             return res.status(401).json({ message: 'Token expired' });
@@ -44,4 +44,4 @@ async function verifyToken(req, res, next) {
     }
 }
 
-export default verifyToken
+export default verifyToken;

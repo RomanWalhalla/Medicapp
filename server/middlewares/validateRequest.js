@@ -1,11 +1,11 @@
-import { validationResult } from "express-validator";
+import { validationResult } from 'express-validator';
 
 const validateRequest = (req, res, next) => {
-    const errors = validationResult(req)
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array(), message: "Invalid input data" });
+        return res.status(400).json({ errors: errors.array(), message: 'Invalid input data' });
     }
-    next()
-}
+    next();
+};
 
-export default validateRequest
+export default validateRequest;

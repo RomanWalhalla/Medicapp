@@ -5,10 +5,9 @@ import { Button } from "@mui/material"
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-quartz.css"
 import { /* useContext, useEffect, */ useEffect, useMemo, useState } from "react"
-// import Context from "../../context/Context"
 import useLoadUserData from "../../api/loadUserData"
 import DocumentPDF from "./documentPDF"
-import { PDFViewer } from "@react-pdf/renderer"
+
 
 
 const Reports = () => {

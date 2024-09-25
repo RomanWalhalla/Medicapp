@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { API_URL } from '../config';
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink/* , useNavigate */ } from 'react-router-dom'
 import chalk from "chalk"
 import { toast } from 'react-toastify';
 
@@ -36,7 +36,7 @@ const Register = () => {
 
     const registerHandler = async () => {
         try {
-            const data = await request("/api/auth/register", "POST", { ...formData })
+            await request("/api/auth/register", "POST", { ...formData })
             console.log(chalk.red("formData", JSON.stringify(formData, null, 2)))
             notifySuccess("Registration successful!")
         } catch (error) {

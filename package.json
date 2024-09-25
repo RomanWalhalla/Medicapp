@@ -52,13 +52,17 @@
     "server": "cd server && npm start",
     "start": "cd client && npm start",
     "startAll": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd client && CI=false npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "x",
     "@types/materialize-css": "^1.0.14",
     "concurrently": "^8.2.2",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react": "^7.36.1",
+    "typescript": "^4.9.5",
     "webpack-dev-server": "^5.0.4"
   },
   "repository": {
