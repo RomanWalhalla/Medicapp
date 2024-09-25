@@ -1,18 +1,23 @@
 // import chalk from "chalk";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
+import Context from "../context/Context";
 
 export const useHttp = () => {
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    const { notifyError } = useContext(Context)
+
+    // const [error, setError] = useState(null)
 
     const request = useCallback(async (url, method = "GET", body = null, headers = {}) => {
-        setLoading(true)
         try {
+            setLoading(true)
             if (body) {
                 body = JSON.stringify(body)
                 headers["Content-Type"] = "application/json"
             }
             const response = await fetch(url, { method, body, headers })
+
+            // console.log("useHttp-response", response);
 
             const data = await response.json()
 
@@ -20,15 +25,15 @@ export const useHttp = () => {
                 throw new Error(data.message || "Something wrong")
             }
             setLoading(false)
+            // notifySuccess("Loaded request")
             return data
-
         } catch (error) {
             setLoading(false)
-            setError(error.message)
+            notifyError(error.message)
             throw error
         }
-    }, [])
-    const clearError = useCallback(() => setError(null), [])
+    }, [notifyError])
+    // const clearError = useCallback(() => setError(null), [])
 
-    return { loading, request, error, clearError }
+    return { loading, request, /* error, clearError */ }
 }

@@ -1,0 +1,292 @@
+header {
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+nav {
+    background-color: rgba(133, 133, 127, 0.709);
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 60px;
+    z-index: 1;
+}
+
+.link a {
+    text-decoration: none;
+    color: rgb(145, 4, 170);
+    font-size: medium;
+}
+
+a:hover {
+    color: aqua;
+}
+
+/* Logo */
+
+.nav_logo {
+    font-size: x-large;  
+    width: 200px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    padding: 10px 10px 10px 20px;
+
+}
+
+.nav_logo a {
+    text-decoration: none;
+    color: aqua;
+    height: 50px;
+}
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+#logo {
+    max-width: 25px;
+    border-radius: 50%;
+    bottom: 0%;
+    padding-top: 10px;
+}
+
+/* Button ___________________________________________ */
+
+.btn_signup_login {
+    border: 2px solid blue;
+    border-radius: 50px;
+    color: rgb(125, 119, 131);
+    background-color: rgb(75, 20, 143);
+}
+
+.btn_signup_login:hover {
+    background-color: aqua;
+    color: rgb(54, 131, 101);
+}
+
+.btn_logout {
+    /* border: 2px solid rgb(13, 16, 216); */
+    border-radius: 6px;
+    color: rgb(31, 24, 15);
+    background-color: blueviolet;
+    font-size: medium
+}
+
+.btn_logout:hover {
+    background-color: aqua;
+    color: rgb(54, 131, 101);
+}
+
+.btn_burger_auth {
+    border: 2px solid blue;
+    border-radius: 50px;
+    color: rgb(125, 119, 131);
+    background-color: rgb(75, 20, 143);
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.btn_burger_auth:hover {
+    background-color: aqua;
+    color: rgb(54, 131, 101);
+}
+
+/* ________________________________________________________________ */
+
+
+
+.menu {
+    background-color: rgba(50, 50, 50, 0.911);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    line-height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.logout_div {
+    margin-top: 5px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.logout_text {
+    display: none;
+    color: deeppink;
+    text-decoration: none;
+    margin-right: 10px;
+
+
+}
+
+.logout_foto img {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.logout_name {
+    color: chartreuse;
+}
+
+.menu_login_div {
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    /* margin: 15px; */
+    background: rgba(124, 123, 133, 0.857);
+    width: 200px;
+    height: auto;
+    border: 2px solid rgb(111, 111, 133) ;
+    border-radius: 4px;
+    box-shadow: 0 8px 16 px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    line-height: 30px;
+    font-size: large;
+    z-index: 1;
+}
+
+.menu_login_div a {
+    text-decoration: none;
+    color: rgb(54, 28, 59);
+}
+
+.menu_login_div img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.menu_login_div hr {
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.menu_login_div a:hover {
+    color: aquamarine;
+    background-color: chocolate;
+} 
+
+.menu_login_logo {
+    display: inline-flex;
+    padding: 15px;
+}
+
+.menu_login_text {
+    display: flexbox;
+    width: 200px;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.menu_login a {
+    display: block;
+    padding: 5px 15px;
+}
+
+.burger_menu_text {
+    width: 200px;
+    color: plum;
+    right: 0px;
+    line-height: 40px;
+    display: block;
+}
+.burger_menu_text a {
+    text-decoration: none;
+    color: plum;
+}
+
+.burger_menu_links a {
+    display: block;
+}
+
+.burger_menu_links a:hover {
+    color: crimson;
+    background-color: rgb(104, 98, 98);
+}
+
+.link_auth_div {
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.link_auth {
+    margin: 5px;
+}
+
+
+@media (min-width: 768px) {
+    .burger_button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav_links {
+        display: none;
+    }
+
+    .link_auth {
+        display: none;
+    }
+
+    .burger_button {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 80px;
+        top: 15px;
+        right: 15px;
+        border-radius: 3px;
+        border-width: 4px;
+        border-color: magenta;
+        background-color: blue;
+    }
+
+    .burger_button span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: chartreuse;
+        left: 0px;
+        top: 9.5px;
+    }    
+
+    .burger_button span:nth-child(1) {
+        top: 0px;
+    }
+    .burger_button span:nth-child(2) {
+        top: 19px;
+    }
+
+    .logout_div {
+        /* display: inline-flex; */
+        /* align-items: center; */
+        vertical-align: middle;
+        margin-right: 60px;
+    }
+
+}
+
+
+
+
+

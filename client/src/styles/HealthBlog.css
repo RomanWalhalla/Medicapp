@@ -1,4 +1,14 @@
-.HealthBlogPage_container {
+
+.HealthBlogPage-container {
     margin: 100px;
     text-align: center;
+    width: inherit;
+    /* height: 100%; */
+
+}
+
+.HealthBlogPage-content {
+    margin: 100px;
+    /* text-align: center; */
+    /* width: 100%; */
 }

@@ -1,0 +1,101 @@
+.form_search {
+    margin: 25px;
+}
+
+.search_input {
+    background-color: rgb(196, 255, 242);
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    width: 120px;
+    height: 100%;
+    padding: 9px 14px;
+    font-size: 17px;
+}
+
+.search_button {
+    background-color: rgb(255, 0, 230);
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: -17px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_button:hover {
+    background-color: aqua;
+}
+
+#fotoDoctor {
+    width: 100px;
+    height: 100px;
+}
+
+/* // Doctor Card  // ___________ */
+
+.doctor-card-container {
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(240, 248, 255, 0.698);
+    width: 170px;
+    height: 230px;
+    margin: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+}
+
+/* .doctor-card-details-container {
+    flex-grow: 1;
+} */
+
+.doctor-card-details {
+    line-height: 20px;
+}
+
+/* // Doctor Card btn // __________ */
+
+.div-book-appointment-btn {
+    position: absolute;
+    left: o;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.book-appointment-btn-accept {
+    width: 100%;
+    background-color: blue;
+    border-radius: 0px 0px 10px 10px;
+    color: bisque;
+    padding: 5px;
+    line-height: 20px;
+    border: none;
+}
+
+.book-appointment-btn-cancel {
+    width: 100%;
+    background-color: red;
+    border-radius: 0px 0px 10px 10px;
+    color: bisque;
+    padding: 5px;
+    line-height: 20px;
+    border: none;
+}
+
+.book-appointment-btn-accept:hover {
+    cursor: pointer;
+    background-color: rgb(20, 160, 114);
+}
+
+.book-appointment-btn-cancel:hover {
+    cursor: pointer;
+    background-color: rgb(234, 67, 67);
+}
