@@ -116,12 +116,12 @@ const SearchButton = ({ onAppointmentData }) => {
                 />
                 <Select
                     className="select_speciality"
-                    value={speciality.label}
+                    value={speciality.value}
                     options={options}
                     onChange={changeSpeciality}
                     placeholder="Speciality"
                     formatOptionLabel={(option) =>
-                        (option ? <><span>{option.label}</span></> : option.label)}
+                        (option ? <>{option.value}</> : option.value)}
                 >
                 </Select>
                 <button
