@@ -59,10 +59,7 @@
     "server:move": "mv client/build server/",
     "build": "npm run client:build && npm run server:cleanup && npm run server:move",
     "build1": "cd client && CI=false npm run build",
-    "build2": "react-scripts build && rm -rdf server/build && mv build server/",
-
-
-
+    "build2": "react-scripts build && rm -rdf server/build && mv build server/"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "x",
