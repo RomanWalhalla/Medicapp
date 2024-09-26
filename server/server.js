@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import cors from 'cors';
 import chalk from 'chalk';
 import express from 'express';
 import authRoutes from './routes/auth.routes.js';
@@ -14,6 +15,7 @@ const app = express();
 
 // Middleware //
 app.use(express.json({ extended: true }));
+app.use(cors());
 // Routes //
 app.use('/api/auth', authRoutes);
 

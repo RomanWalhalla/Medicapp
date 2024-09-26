@@ -52,9 +52,13 @@
     "server": "cd server && npm start",
     "start": "cd client && npm start",
     "startAll": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && CI=false npm run build",
+    "build1": "cd client && CI=false npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "client:build": "cd client && npm run build",
+    "server:cleanup": "rm -rdf server/build",
+    "server:move": "mv client/build server/",
+    "build": "npm run client:build && npm run server:cleanup && npm run server:move"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "x",
