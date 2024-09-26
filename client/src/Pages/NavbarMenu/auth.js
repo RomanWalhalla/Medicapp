@@ -94,7 +94,8 @@ const AuthPage = () => {
                                                 name="role"
                                                 value={role}
                                                 onChange={changeHandler}
-                                                required>
+                                                required
+                                            >
                                                 <option value='' disabled>------</option>
                                                 <option value="doctor">Doctor</option>
                                                 <option value="patient">Patient</option>
@@ -113,7 +114,10 @@ const AuthPage = () => {
                                                 className="form-control_register"
                                                 required
                                                 placeholder="Enter your name"
-                                                aria-describedby='helpId' />
+                                                aria-describedby='helpId'
+                                                minLength={2}
+                                                maxLength={15}
+                                            />
                                         </fieldset>
                                     </div>
                                     <div className="form-group_signup">
@@ -129,6 +133,8 @@ const AuthPage = () => {
                                                 required
                                                 placeholder="Enter your phone"
                                                 aria-describedby='helpId'
+                                                minLength={5}
+                                                maxLength={12}
                                             />
                                         </fieldset>
                                     </div>
@@ -144,8 +150,12 @@ const AuthPage = () => {
                                                 className="form-control_register"
                                                 required
                                                 placeholder="Enter your email"
-                                                aria-describedby='helpId' />
-                                            {/* {showerr && <div className='err' style={{ color: 'red' }}>{showerr}</div>} */}
+                                                aria-describedby='helpId'
+                                                minLength={5}
+                                                maxLength={20}
+                                            />
+                                            {/* {showerr && <div className='err'
+                                             style={{ color: 'red' }}>{showerr}</div>} */}
                                         </fieldset>
                                     </div>
                                     <div className="form-group_signup">
@@ -160,7 +170,11 @@ const AuthPage = () => {
                                                 className="form-control_register"
                                                 required
                                                 placeholder="Enter your password"
-                                                aria-describedby='helpId' />
+                                                aria-describedby='helpId'
+                                                minLength={5}
+                                                maxLength={12}
+                                            />
+
                                         </fieldset>
                                     </div>
                                     <div className="btn_group_signup">
@@ -212,7 +226,10 @@ const AuthPage = () => {
                                                 required
                                                 className="form-control_login"
                                                 placeholder="Enter your email"
-                                                aria-describedby="helpId" />
+                                                aria-describedby="helpId"
+                                                minLength={5}
+                                                maxLength={12}
+                                            />
                                         </fieldset>
                                     </div>
                                     <div className="form_group">
@@ -227,7 +244,9 @@ const AuthPage = () => {
                                                 required
                                                 className="form-control_login"
                                                 placeholder="Enter your password"
-                                                aria-describedby="helpId" />
+                                                aria-describedby="helpId"
+                                                minLength={5}
+                                                maxLength={12} />
                                         </fieldset>
                                     </div>
                                     <div className="btn_group">
