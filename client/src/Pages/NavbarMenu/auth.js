@@ -4,10 +4,9 @@ import React, { useContext, /* useEffect, */ useState } from 'react';
 // import chalk from "chalk"
 import { useHttp } from '../../hooks/http.hook';
 import Context from "../../context/Context";
+import "../../styles/Auth.css"
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-
-import "../../styles/Auth.css"
 
 const AuthPage = () => {
     const { login, initialState, notifySuccess, notifyError } = useContext(Context)
