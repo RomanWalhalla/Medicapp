@@ -228,7 +228,7 @@ const AuthPage = () => {
                                                 placeholder="Enter your email"
                                                 aria-describedby="helpId"
                                                 minLength={5}
-                                                maxLength={12}
+                                                maxLength={20}
                                             />
                                         </fieldset>
                                     </div>
