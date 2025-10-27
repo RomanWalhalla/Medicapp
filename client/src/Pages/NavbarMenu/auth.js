@@ -5,6 +5,8 @@ import React, { useContext, /* useEffect, */ useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
 import Context from "../../context/Context";
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 import "../../styles/Auth.css"
 
 const AuthPage = () => {
@@ -36,7 +38,7 @@ const AuthPage = () => {
 
     const registerHandler = async () => {
         try {
-            const response = await request("/api/auth/register", "POST", { ...formDataR })
+            const response = await request(`${API_URL}/api/auth/register`, "POST", { ...formDataR })                   
             // const data = await request("/api/auth/register", "POST", { ...formData })
             // console.log(chalk.red("formData", JSON.stringify(formData, null, 2)))
             notifySuccess(response)
@@ -55,7 +57,7 @@ const AuthPage = () => {
     // Login //
     const loginHandler = async () => {
         try {
-            const response = await request("/api/auth/login", "POST", { ...formDataR })
+            const response = await request(`${API_URL}/api/auth/login`, "POST", { ...formDataR })
             login(response)
             // console.log(chalk.red("formData", <JSO></JSO>N.stringify(formData, null, 2)))
             // console.log(chalk.red("data", JSON.stringify(data, null, 2)))
