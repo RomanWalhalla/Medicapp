@@ -5,27 +5,45 @@ import chalk from 'chalk';
 import express from 'express';
 import authRoutes from './routes/auth.routes.js';
 import appointmentsRoutes from './routes/appointments.routes.js';
-import path from 'path';
+// import path from 'path';
 import mongoose from 'mongoose';
 
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+// GPT fix for __dirname in ES modules
+
 // import util from "util";
-const __dirname = import.meta.dirname;
+// const __dirname = import.meta.dirname;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 const app = express();
 
-// Middleware //
+// Middleware // 
 app.use(express.json({ extended: true }));
 app.use(cors());
+
 // Routes //
 app.use('/api/auth', authRoutes);
-
 app.use('/api/appointments', appointmentsRoutes);
 
+// Health Check
+app.get('/healthz', (req, res) => res.send('OK'));
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+// Frontend build
+app.use(express.static(resolve(__dirname, '../client/build')));
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    res.sendFile(resolve(__dirname, '../client/build', 'index.html'));
 });
+
+
+// app.use(express.static(path.resolve(__dirname, '../client/build')));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+// });
 
 const PORT = process.env.PORT || 5000;
 
@@ -33,7 +51,7 @@ async function start() {
     try {
         await mongoose.connect(process.env.MONGO_URI)
             .then(() => console.log(chalk.bgGreenBright.bold.underline('MongoDB connected')))
-            .catch((err) => console.log(chalk.bgRed.bold.underline('DB error') + err));
+            // .catch((err) => console.log(chalk.bgRed.bold.underline('DB error') + err));
 
         app.listen(PORT, () => {
             // console.log("%c Server", "color:white; background color: yellow", `Server is running on port ${PORT}`);
