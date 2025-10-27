@@ -22,18 +22,31 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-// Middleware // 
-app.use(express.json({ extended: true }));
-
+// ✅ Разрешаем только нужные домены
 const allowedOrigins = [
-  "https://medical-apps.netlify.app", // ← твой фронтенд-домен
-  "http://localhost:3000",               // ← для локальной разработки
+  "http://localhost:3000",       // локальная разработка
+  "https://medical-apps.netlify.app", // твой сайт на Netlify
+  "http://medicapp.es",           // твой кастомный домен
 ];
 
 app.use(cors({
-  origin: allowedOrigins, // твой Netlify-домен
-  credentials: true,   // если ты передаёшь cookie или токены
-}));
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}))
+
+// app.use(cors({
+//   origin: allowedOrigins, // твой Netlify-домен
+//   credentials: true,   // если ты передаёшь cookie или токены
+// }));
+
+// Middleware // 
+app.use(express.json({ extended: true }));
 
 // Routes //
 app.use('/api/auth', authRoutes);
