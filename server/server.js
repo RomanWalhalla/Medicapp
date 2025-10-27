@@ -24,7 +24,16 @@ const app = express();
 
 // Middleware // 
 app.use(express.json({ extended: true }));
-app.use(cors());
+
+const allowedOrigins = [
+  "https://medical-apps.netlify.app", // ← твой фронтенд-домен
+  "http://localhost:3000",               // ← для локальной разработки
+];
+
+app.use(cors({
+  origin: allowedOrigins, // твой Netlify-домен
+  credentials: true,   // если ты передаёшь cookie или токены
+}));
 
 // Routes //
 app.use('/api/auth', authRoutes);
