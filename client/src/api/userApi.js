@@ -73,8 +73,11 @@
 //         throw new Error(error)
 //     }
 // }
+
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const refreshTokenIfNeeded = async (refreshToken, notifyError) => {
-    const response = await fetch('/api/auth/refreshToken', {
+    const response = await fetch(`${API_URL}/api/auth/refreshToken'`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -84,7 +87,6 @@ const refreshTokenIfNeeded = async (refreshToken, notifyError) => {
 
     // console.log("refreshTokenIfNeeded - response", response.json());
     
-
     if (!response.ok) {
         notifyError("Не удалось обновить токен - refreshTokenIfNeeded");
         throw new Error("Не удалось обновить токен");
@@ -139,31 +141,31 @@ const fetchWithToken = async (url, method, body, notifyError) => {
 
 // Использование в fetchUserProfile
 export const fetchDataProfile = async (userId, notifyError) => {
-    return fetchWithToken(`/api/auth/user/${userId}`, "GET", null, notifyError);
+    return fetchWithToken(`${API_URL}/api/auth/user/${userId}`, "GET", null, notifyError);
 };
 // Использование в fetchDataNavbar
 export const fetchDataNavbar = async (userId, notifyError) => {
-    return fetchWithToken(`/api/auth/user/${userId}`, "GET", null, notifyError);
+    return fetchWithToken(`${API_URL}/api/auth/user/${userId}`, "GET", null, notifyError);
 };
 // Использование в fetchDataPatient
 export const fetchDataPatient = async (userId, notifyError) => {
-    return fetchWithToken(`/api/auth/user/${userId}`, "GET", null, notifyError);
+    return fetchWithToken(`${API_URL}/api/auth/user/${userId}`, "GET", null, notifyError);
 };
 // Использование в updateUserProfile
 export const updateDataProfile = async (userId, updatedData, notifyError) => {
-    return fetchWithToken(`/api/auth/updateDataProfile/${userId}`, "PUT", updatedData, notifyError);
+    return fetchWithToken(`${API_URL}/api/auth/updateDataProfile/${userId}`, "PUT", updatedData, notifyError);
 };
 // Использование в searchDoctors
 export const searchDoctors = async (userId, firstName, speciality, notifyError) => {
-    return fetchWithToken(`/api/auth/searchDoctors/${userId}?doctorName=${firstName}&speciality=${speciality}`, "GET", null, notifyError);
+    return fetchWithToken(`${API_URL}/api/auth/searchDoctors/${userId}?doctorName=${firstName}&speciality=${speciality}`, "GET", null, notifyError);
 };
 // Использование в createUserAppointments
 export const createAppointments = async (userId, updatedData, notifyError) => {
-    return fetchWithToken(`/api/appointments/register/${userId}`, "POST", updatedData, notifyError);
+    return fetchWithToken(`${API_URL}/api/appointments/register/${userId}`, "POST", updatedData, notifyError);
 };
 // Использование в fetchAppointmentsData
 export const fetchAppointmentsData = async (userId, notifyError) => {
-    return fetchWithToken(`/api/appointments/user/${userId}`, "GET", null, notifyError);
+    return fetchWithToken(`${API_URL}/api/appointments/user/${userId}`, "GET", null, notifyError);
 };
 
 

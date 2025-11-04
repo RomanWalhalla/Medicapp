@@ -56,10 +56,10 @@ app.use('/api/appointments', appointmentsRoutes);
 app.get('/healthz', (req, res) => res.send('OK'));
 
 // Frontend build
-app.use(express.static(resolve(__dirname, '../client/build')));
-app.get('*', (req, res) => {
-    res.sendFile(resolve(__dirname, '../client/build', 'index.html'));
-});
+// app.use(express.static(resolve(__dirname, '../client/build')));
+// app.get('*', (req, res) => {
+//     res.sendFile(resolve(__dirname, '../client/build', 'index.html'));
+// });
 
 
 // app.use(express.static(path.resolve(__dirname, '../client/build')));
