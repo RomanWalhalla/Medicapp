@@ -47,8 +47,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "client:build": "cd client && npm run build",
-    "server:cleanup": "rm -rdf server/build",
-    "server:move": "mv client/build server/",
+    "server:cleanup": "rimraf server/build",
+    "server:move": "move-cli client/build server/",
     "build": "npm run client:build && npm run server:cleanup && npm run server:move",
     "build1": "cd client && CI=false npm run build",
     "build2": "react-scripts build && rm -rdf server/build && mv build server/"
@@ -59,6 +59,8 @@
     "concurrently": "^8.2.2",
     "eslint": "^9.11.1",
     "eslint-plugin-react": "^7.36.1",
+    "move-cli": "^2.0.0",
+    "rimraf": "^6.1.0",
     "typescript": "^4.9.5",
     "webpack-dev-server": "^5.0.4"
   },
