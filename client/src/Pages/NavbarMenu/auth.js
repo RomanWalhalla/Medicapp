@@ -59,7 +59,8 @@ const AuthPage = () => {
 
     // Login //
 
-    const loginHandler = async () => {
+    const loginHandler = async (e) => {
+        e.preventDefault()
         try {
             const response = await request(`${API_URL}/api/auth/login`, "POST", { ...formDataR })
             login(response)
