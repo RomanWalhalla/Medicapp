@@ -35,7 +35,11 @@ const AuthPage = () => {
 
     const changeHandler = (e) => setFormDataR({ ...formDataR, [e.target.name]: e.target.value });
 
-    const registerHandler = async () => {
+    // Register//
+
+    const registerHandler = async (e) => {
+        e.preventDefault()
+        
         try {
             const response = await request(`${API_URL}/api/auth/register`, "POST", { ...formDataR })                   
             // const data = await request("/api/auth/register", "POST", { ...formData })
@@ -54,6 +58,7 @@ const AuthPage = () => {
     // ----------------------------------------------------------------------------------------
 
     // Login //
+
     const loginHandler = async () => {
         try {
             const response = await request(`${API_URL}/api/auth/login`, "POST", { ...formDataR })
@@ -86,7 +91,9 @@ const AuthPage = () => {
                                 Already member? <span><NavLink to="/Login">Login</NavLink></span>
                             </div>
                             <div className="sign_up-form">
-                                <form action="" onSubmit={e => e.preventDefault()}>
+
+                                <form onSubmit={registerHandler}>
+
                                     <div className="form-group_signup">
                                         <fieldset>
                                             <legend>Role</legend>
@@ -182,7 +189,6 @@ const AuthPage = () => {
                                         <button
                                             type="submit"
                                             className="btn btn_primary"
-                                            onClick={registerHandler}
                                             disabled={loading}
                                         >
                                             Submit
@@ -211,10 +217,10 @@ const AuthPage = () => {
                             <div className="login_text">
                                 Are you a new member? <span><NavLink to="/SignUp">Sign Up Here</NavLink></span>
                             </div>
-                            <div className="login_form">
-                                <form
-                                    onSubmit={e => e.preventDefault()}
-                                >
+                            <div className="login_form">    
+                                
+                                <form onSubmit={loginHandler}>
+
                                     <div className="form_group">
                                         <fieldset>
                                             <legend>Email</legend>
@@ -254,7 +260,6 @@ const AuthPage = () => {
                                         <button
                                             type="submit"
                                             className="btn btn_primary"
-                                            onClick={loginHandler}
                                         >
                                             Submit
                                         </button>
